@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: wy;
+            src: url("../font/ZiYanShiQianChunWuYu-2.ttf");
+        }
+
+        .box {
+            width: 1000px;
+            height: 700px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+            /* 父元素设置相对定位 */
+            position: relative;
+        }
+
+        .itm {
+            width: 150px;
+            height: 50px;
+            background-color: #7ccce0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        span {
+            font-size: 25px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-family: wy;
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+
+        .re {
+            /* 当设置属性值时，根据其设置了position非static值的父元素定位 */
+            /* 匹配最近的一层父元素 */
+            /* 如果所有父元素都未设置 则根据浏览器显示窗口大小来定位 */
+            position: absolute;
+            /* 距离设置了position非static值的父元素左侧20px 底部20px */
+            left: 20px;
+            bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="itm">
+            <span>1</span>
+        </div>
+        <div class="itm re">
+            <span>2</span>
+        </div>
+        <div class="itm">
+            <span>3</span>
+        </div>
+        <div class="itm">
+            <span>4</span>
+        </div>
+        <div class="itm">
+            <span>5</span>
+        </div>
+        <div class="itm">
+            <span>6</span>
+        </div>
+    </div>
+</body>
+
+</html>

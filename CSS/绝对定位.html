@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: wy;
+            src: url("../font/ZiYanShiQianChunWuYu-2.ttf");
+        }
+
+        .box {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .itm {
+            width: 150px;
+            height: 50px;
+            background-color: #7ccce0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        span {
+            font-size: 25px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-family: wy;
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+
+        .re {
+            /* 给第二个元素设置绝对定位 */
+            /* 只设置一个绝对定位而没有其他值，元素位置是根据当前文档流环境决定的 */
+            /* 在flex布局中，如果 justify-content: center; 被绝对定位的元素会移动到中间 justify-content的其他属性值按其效果排列*/
+            /* 设置绝对定位后，元素脱离原本空间，后面的元素会填补到该元素之前占据的位置 */
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="itm">
+            <span>1</span>
+        </div>
+        <div class="itm re">
+            <span>2</span>
+        </div>
+        <div class="itm">
+            <span>3</span>
+        </div>
+        <div class="itm">
+            <span>4</span>
+        </div>
+        <div class="itm">
+            <span>5</span>
+        </div>
+        <div class="itm">
+            <span>6</span>
+        </div>
+    </div>
+</body>
+
+</html>
