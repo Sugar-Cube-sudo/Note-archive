@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 花括号前的是选择器，用于选中某些元素，设置样式 */
+        /* 标签选择器：如下，以标签名作为选择器 */
+        /* 标签选择器对页面中所有符合条件的标签起作用，如下，对页面中所有div标签起作用 */
+        div {
+            width: 100px;
+            height: 100px;
+            background-color: greenyellow;
+        }
+
+        /* id选择器，仅选中对应id的元素，设置样式 */
+        /* 因id不能重复，所以id选择器只能选中一个元素 */
+        #div3 {
+            width: 100px;
+            height: 100px;
+            background-color:palevioletred;
+        }
+
+        /* 类选择器，选中所有具有对应类名的元素，设置样式 */
+        /* 类选择器可以选中多个元素 */
+        .div4 {
+            width: 100px;
+            height: 100px;
+            background-color: rgb(92, 47, 255);
+        }
+
+        .divv {
+            font-size: 30px;
+        }
+
+        /* 选择器优先级： */
+        /* 内联样式 > id选择器 > 类选择器 > 标签选择器 */
+    </style>
+</head>
+<body>
+    <div>
+        111
+    </div>
+    <div>
+        222
+    </div>
+    <div id="div3">
+        333
+    </div>
+    <!-- class：类属性，属性值为类名，与类选择器配合使用 -->
+     <!-- 类名可以设置多个 -->
+    <div class="div4 divv">
+        444
+    </div>
+    <div class="div4">
+        555
+    </div>
+</body>
+</html>

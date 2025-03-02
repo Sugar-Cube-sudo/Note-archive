@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input {
+            /* 聚焦状态下的边框 取消取值none*/
+            outline: none;
+        }
+
+        .none {
+            /* 列表项开头数字或圆点 */
+            /* 隐藏取值为none */
+            list-style: none;
+        }
+
+        .emoj {
+            /* 给列表项前的标识设置其他样式 */
+            list-style-type: "\1F44D";
+        }
+    </style>
+</head>
+<body>
+    <span>输入框</span> <input>
+    <ol>
+        <li class="none">111</li>
+    </ol>
+    <ul>
+        <li class="none">222</li>
+    </ul>
+    <ul class="emoj">
+        <li>333</li>
+    </ul>
+</body>
+</html>

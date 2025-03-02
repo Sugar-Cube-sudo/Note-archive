@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .parent {
+            /* 父盒子边框 */
+            border: 2px solid red;
+            width: fit-content;
+        }
+
+        .child {
+            width: 100px;
+            height: 100px;
+            border: 2px solid green;
+            background-color: coral;
+            color: #fff;
+
+            /* 背景显示区域 */
+            /* 属性：
+               border-box：默认值
+               padding-box：背景作用于内边距
+               content-box：背景作用于内容区域
+               text：背景裁切为文字的前景色  实验性
+            */
+            background-clip: content-box;
+
+            /* 外边距 */
+            margin: 10px;
+
+            /* 多值写法 */
+            /* 上下 左右 */
+            /* margin: 10px 20px; */
+
+            /* 上 右 下 左 */
+            /* margin: 10px 20px 30px 40px; */
+
+            /* 单独设置某一边 */
+            /* margin-top: 20px; */
+
+            /* 内边距 */
+            /* 内边距的多值写法和单独设置某一边的写法于外边距相同 */
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">
+            <span>前端</span>
+        </div>
+    </div>
+</body>
+</html>

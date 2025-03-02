@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 视频标签 -->
+    <!-- autoplay: 自动播放属性 但出于用户体验考虑，浏览器一般禁止自动播放，只允许视频静音时自动播放 -->
+    <!-- muted: 静音 -->
+    <!-- controls: 视频控制按钮属性 -->
+    <!-- poster: 视频封面图 -->
+    <!-- loop: 视频循环播放 -->
+    <!-- volume: 视频默认音量。0-1之间的值 -->
+    <video
+      src="./video/1.mp4"
+      autoplay
+      muted
+      controls
+      poster="./img/视频.jpg"
+      loop
+      volume="0.5"
+    >
+      <!-- 这里的文字会在浏览器不支持视频标签时显示 -->
+      <!-- 主流浏览器都支持视频标签，所以这里一般不写 -->
+      不支持视频标签
+    </video>
+  </body>
+</html>

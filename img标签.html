@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 图片标签 -->
+    <!-- alt属性 图片描述 当图片无法显示时，显示文字 -->
+    <!-- title属性 图片描述 与alt相比不太重要 鼠标移到图片上时显示 一般不设置-->
+    <!-- width height 宽和高 这里的宽高指占用的显示区域 不是图片本身大小 单位像素 px 一般使用CSS设置 -->
+    <img width="1200" height="600" src="./img/bg.jpg" alt="开拓芯" title="开拓芯" />
+
+    <!-- srcset写法: 针对高分辨率屏幕优化，当屏幕分辨率较高时，使用高清晰度的图片显示 -->
+    <img src="./img/bg.jpg" alt="开拓芯" srcset="bg.jpg 2x, bg.jpg 3x" />
+  </body>
+</html>

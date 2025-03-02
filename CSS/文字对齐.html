@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p {
+            font-size: 25px;
+            text-shadow: 1px 1px 2px #000;
+            /* 文字水平居中 */
+            /* 值：
+                   center：居中
+                   right：右对齐
+                   justify：两边对齐  只对多行文字起作用，且对最后一行无用
+                   left：左对齐
+            */
+            /* 只对块级元素起作用 */
+            text-align: center;
+        }
+
+        span {
+            font-size: 25px;
+        }
+
+        .s2 {
+            font-size: small;
+            color: red;
+            /* 行内元素或表格单元格的对齐方式 */
+            /* 基于行空间 */
+            /* 具体值设置看MDN */
+            vertical-align: text-top;
+        }
+    </style>
+</head>
+<body>
+    <p>秋天是倒放的春天，晚安是爱你的序篇</p>
+
+    <span>
+        Hello
+        <span class="s2">
+            is
+        </span>
+    </span>
+</body>
+</html>

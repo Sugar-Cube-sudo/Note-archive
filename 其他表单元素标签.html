@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 结构分组标签：fieldset -->
+    <fieldset>
+      <!-- 分组内容注释标签：legend -->
+      <legend>配置标题</legend>
+      <label for="title">标题</label>
+      <input type="text" name="" id="title" />
+    </fieldset>
+
+    <!-- 表单最高层级标签：from -->
+    <!-- 用于最终向服务器提交数据时呈现完整数据结构 -->
+    <!-- action：数据提交地址 -->
+    <form action="">
+      <fieldset>
+        <legend>单选</legend>
+        <label for="title">单选</label>
+        <input type="radio" name="dan" id="title" />
+        <input type="radio" name="dan" id="title" />
+      </fieldset>
+      <!-- 按钮标签：button -->
+      <!-- type值：
+        submit：默认值
+        reset：按钮功能为重置表单数据
+        button：没有默认行为，一般与JS配合使用
+        -->
+      <!-- 用作表单功能按钮时，应写在form内部 -->
+      <button>提交</button>
+      <button type="reset">重置</button>
+    </form>
+  </body>
+</html>

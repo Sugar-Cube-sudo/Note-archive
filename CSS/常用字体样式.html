@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        /* 字重 */
+        /* 即字体粗细 */
+        font-weight: 400;
+
+        /* 斜体 */
+        font-style: italic;
+
+        /* 行高 */
+        /* 即行与行之间的距离 */
+        line-height: 20px;
+
+        /* 英文单词首字母大写 */
+        text-transform: capitalize;
+        /* 单词间距 以空格区分 */
+        /* 在中文环境生效需要将字符之间以空格隔开 */
+        /* 所以，该属性实际作用于空格 */
+        word-spacing: 5px;
+      }
+
+      .p2 {
+        /* 字符间距，用于调整文字与文字间的距离 */
+        letter-spacing: 5px;
+
+        /* 首行缩进 */
+        text-indent: 4px;
+
+        /* 文字投影 */
+        /* 即给文字加阴影 */
+        /* x轴偏移量 y轴偏移量 模糊程度 颜色 */
+        text-shadow: 1px 1px 2px rgba(127, 224, 253, 0.753);
+      }
+    </style>
+  </head>
+  <body>
+    <p>字体样式</p>
+    <p>字体样式</p>
+    <p>
+      Is it convenient to ask for directions?
+    </p>
+    <p class="p2">
+      秋天是倒放的春天，晚安是爱你的序篇--张爱玲
+    </p>
+  </body>
+</html>

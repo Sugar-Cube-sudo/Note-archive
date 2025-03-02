@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 使用字体文件，尽量写在CSS顶部 */
+      @font-face {
+        /* 自定义字体名 */
+        font-family: Text;
+        /* 字体文件路径 */
+        /* src可以写多个值，用于指向不同格式的字体 */
+        src: url("../font/ZiYanShiQianChunWuYu-2.ttf");
+        /* 自定义字体显示逻辑 */
+        /* 值：
+                   block：文字有较长不显示时间，比如3秒，就算超时加载完会切换
+                   swap： 文字立即显示，字体加载完会切换  常用
+                   fallback：极短时间文字不显示，比如100毫秒，如果在几秒内加载完成，还是会切换显示，字体加载时间过长则不切换
+            */
+        font-display: swap;
+      }
+      p {
+        /* 字体设置 */
+        /* 可以设置多个值，用逗号隔开 */
+        /* 网页打开时，从第一个字体开始匹配，直到匹配成功，都不成功则使用默认字体 */
+        /* 关键字：system-ui 写该值则使用系统默认字体 */
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+          Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+          sans-serif;
+      }
+
+      .p2 {
+        /* 使用字体文件 */
+        /* 写在CSS顶部自定义的字体名即可 */
+        font-family: "Text";
+        letter-spacing: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <p>秋天是倒放的春天，晚安是爱你的序篇</p>
+    <hr />
+    <p class="p2">秋天是倒放的春天，晚安是爱你的序篇</p>
+  </body>
+</html>

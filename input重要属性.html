@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- name属性决定向服务器回传的数据名称，如一个文本输入框，name值是title，最终数据格式则是：title: 输入的内容 -->
+    <span>标题</span> <input type="text" name="title" />
+
+    <!-- value属性是实际回传的数据值，以下列多选框为例，实际数据结构为craet: orginal -->
+    <!-- 多选应给每个选项设置独立的name值，单选应保证所有选项name值相同 -->
+    <label for="htmltype">创作类型</label>
+    <input name="craet" type="checkbox" value="orginal" id="htmltype" />
+
+    <!-- 其他常用属性 -->
+    <!-- placeholder：显示一段占位文字，可以用于显示输入提示符 -->
+    <input type="text" placeholder="占位文字" />
+
+    <!-- required：表示该字段是必填项 -->
+    <input type="text" required>
+
+    <!-- maxlength：限制输入字段的最大字符数 -->
+    <input type="text" maxlength="10">
+
+    <!-- min | max：限制数字输入字段的最小值，最大值 -->
+    <input type="text" max="10">
+  </body>
+</html>

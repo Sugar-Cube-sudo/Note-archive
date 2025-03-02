@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        @font-face {
+            font-family: wy;
+            src: url("../font/ZiYanShiQianChunWuYu-2.ttf");
+        }
+
+        h1 {
+            font-size: 55px;
+            font-family: wy;
+        }
+
+        .box {
+            background-image: url("https://i1.mcobj.com/uploads/20220514_627f639097901.png");
+            width: 600px;
+            /* 设置元素宽高比 */
+            aspect-ratio: 16/9;
+            background-size: cover;
+            background-position: center;
+
+            /* 遮罩属性 */
+            /* mask */
+            /* 图片遮罩 */
+            /* 遮罩图像的透明度决定了元素的透明度：遮罩图像中完全透明的部分会使元素完全不可见，完全不透明的部分会使元素完全可见，而半透明的部分会使元素部分可见 */
+            /* 值：
+                    none：默认值，没有遮罩
+                    <image>：可以是任何有效的图像资源，如 URL、渐变、或图像元素
+                    <mask-source>: 可以是 SVG 的 <mask> 元素
+            */
+            /* 部分属性与背景图的属性类似，如缩放大小，位置，是否重复等 */
+            mask-image: url("../img/冰.png");
+            /* 遮罩是否重复 */
+            mask-repeat: no-repeat;
+            /* 遮罩位置 */
+            mask-position: center;
+            /* 遮罩大小 */
+            mask-size: contain;
+            /* 
+               alpha: 透明度 默认值
+               luminance: 亮度 当图像为灰度渐变时，设置该值，亮度较高的区域会使元素显示更多，亮度较低的区域会使元素显示更少
+               match-source: 自动选择，如果遮罩图像是带有 alpha 通道的图像（如 PNG），则使用 alpha 模式，如果遮罩图像是灰度图像，则使用 luminance 模式
+            */
+            mask-mode: alpha;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>元素遮罩与蒙版</h1>
+    <div class="box"></div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .di1 {
+            width: 800px;
+            height: 800px;
+
+            /* 多层背景 */
+            /* 如：背景图和背景色 */
+            background: url("../img/雷.png"), #CCE7FA;
+            background-size: contain;
+
+            /* 混合模式 */
+            /* 背景有多少个，混合模式的值就应该设置多少个，一一对应 */
+            /* 取值详见MDN */
+            background-blend-mode: multiply, normal;
+        }
+    </style>
+</head>
+<body>
+    <div class="di1"></div>
+</body>
+</html>

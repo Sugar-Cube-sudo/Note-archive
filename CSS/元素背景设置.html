@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .di1 {
+            width: 400px;
+            height: 400px;
+            border: 4 px solid #f92424;
+            /* 背景色 */
+            background-color: #a3a3ae;
+        }
+
+        .di2 {
+            border: 15px dashed #f92424;
+            padding: 20px;
+            width: 1000px;
+            height: 800px;
+            /* 背景图 */
+            background-image: url("../img/流萤.png");
+            /* 背景图平铺属性 */
+            /* 值：
+                repeat 默认值
+                repeat-x 横向
+                repeat-y 纵向
+                no-repeat 不平铺
+            */
+            background-repeat: no-repeat;
+            /* 背景图绘制区域 */
+            /* 值：
+              content-box 从内容区域开始绘制
+              border-box  从边框区域开始绘制
+              padding-box 从内边距区域开始绘制
+            */
+            background-origin: border-box;
+            /* 背景图缩放 */
+            /* 值：
+                contain  撑满background-origin设置的绘制区域 可能会有留白
+                cover    完全覆盖background-origin设置的绘制区域 可能会裁剪图片
+            */
+            background-size: cover;
+            /* 背景图绘制起点 */
+            /* 限制在background-origin设置的区域内 */
+            /* 值：
+               left  左
+               right  右
+               center 居中
+               top  上
+               bottom  下
+               left top 左上
+               right bottom 右下
+               left bottom 左下
+               right top 右上
+            */
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="di1"></div>
+    <div class="di2"></div>
+</body>
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      p {
+        /* 控制文本换行与空白符处理逻辑 */
+        /* 最常见的空白符是空格 */
+        /* 值：
+                nowrap：不换行
+                normal：连续的空白符会被合并，如连续的空格 默认值
+                pre：保存所有空白符，不合并
+                pre-wrap：保留所有空白符和换行效果
+            */
+        white-space: normal;
+
+        /* 单词截断 */
+        /* 英文环境中，该属性截断单词使换行时显示整齐无空格*/
+        word-break: break-all;
+      }
+
+      .p2 {
+        width: 100px;
+        height: 100px;
+        /* 溢出隐藏  在布局时细讲 */
+        overflow: hidden;
+        white-space: nowrap;
+        /* 处理文字溢出 */
+        /* 值：
+               ellipsis：溢出部分显示为...  只作用于单行文字
+        */
+        text-overflow: ellipsis;
+      }
+    </style>
+  </head>
+  <body>
+    <p>
+      Bai Liusu and Fan Liuyuan: one is a woman from a traditional family whose
+      marriage has failed, while the other is a modern gentleman reveling in the
+      smoky alleys of the city. Their paths first cross through the matchmaking
+      of Liusu's younger sister, Bai Baoluo. Fan Liuyuan invites the Bai family
+      to a dance hall, where they sit in stunned silence, and only Liusu dances
+      with him for a couple of rounds. Originally there to meet Bai Baoluo, Fan
+      Liuyuan finds himself attracted to Liusu. A few days later, the
+      introducer, Mrs. Xu, visits the Bai residence and informs them that Fan
+      Liuyuan has left Shanghai. She suggests that Bai Liusu accompany her to
+      Hong Kong, to which Liusu agrees. Upon arriving in Hong Kong, Liusu
+      encounters Fan Liuyuan, already anticipating this meeting. In the
+      subsequent days, Liuyuan takes Liusu on various outings, yet he does not
+      even touch her hand. He goes to great lengths to bring Liusu to Hong Kong,
+      hoping to shield her from the gossip of the world and wishing to return
+      her to a state of pure love. Liusu desires a sense of belonging; she
+      believes that if she can make it difficult for him to possess her, she
+      might become Mrs. Fan. However, Fan Liuyuan remains inactive. It is not
+      until they are on the beach, playfully splashing each other and laughing,
+      that Liusu suddenly feels offended, stands up, and walks towards the
+      hotel, with Liuyuan not following her.
+    </p>
+    <hr>
+    <p class="p2">
+      白流苏与范柳原，一个是传统世家婚姻失败的女性，一个是醉生于烟柳粉巷的新派公子，以流苏妹妹白宝络的相亲为契机第一次产生交集。范柳原请白家人去舞场，一家人呆若木鸡地坐着，只有流苏会跳舞，和他跳了两场三场。原本与白宝络相亲的范柳原，喜欢上了流苏。隔了几日，介绍人徐太太来到白公馆，说范柳原已不在上海，她还提出让白流苏随她去香港一趟，流苏答应了。到了香港，流苏见到范柳原，心里早就料到这一着。之后的日子柳原带流苏到处游玩，可连她的手都不曾碰一下，他费劲心机让流苏到香港，想让她远离世俗的流言蜚语，只想让她回到纯粹的爱上。流苏想要的是一个归宿，她觉得范柳原会和自己发生关系，自己只需让他不轻易得到，或许就可成为范太太，可范柳原迟迟没有行动。直到在沙滩上，两个人噼噼啪啪打着，笑成一片。流苏突然被得罪了，站起身往旅馆走，柳原没有跟上来
+    </p>
+  </body>
+</html>

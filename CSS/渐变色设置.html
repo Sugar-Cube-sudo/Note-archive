@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            display: flex;
+            gap: 10px;
+        }
+        .wi {
+            width: 800px;
+            height: 800px;
+            border: 2px solid red;
+        }
+        span {
+            font-size: 20px;
+            padding: 15px;
+            margin-top: 5px;
+            background-color: #2e2d2d56;
+            border: 1px solid rgba(255, 0, 0, 0.349);
+            border-radius: 70px;
+        }
+
+        .di1 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            /* 线性渐变 */
+            /* 默认从上到下 */
+            /* background-image: linear-gradient(#B6FAFF,#FFEAE1); */
+            /* 修改方向 如 改为从左向右 */
+            background-image: linear-gradient(to right, #5D62CC, #FFDDDD);
+        }
+
+        .di2 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            /* 径向渐变 */
+            background-image: radial-gradient(#CFFFBD, #B9DFFF);
+        }
+
+        .di3 {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+
+            /* 椎形渐变 */
+            background-image: conic-gradient(#B6FAFF,#FFEAE1);
+        }
+    </style>
+</head>
+<body>
+    <div class="di1 wi">
+        <span>线性渐变</span>
+    </div>
+    <div class="di2 wi">
+        <span>径向渐变</span>
+    </div>
+    <div class="di3 wi">
+        <span>锥形渐变</span>
+    </div>
+</body>
+</html>

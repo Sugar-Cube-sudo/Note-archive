@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .div1 {
+        width: 400px;
+        height: 900px;
+        background-color: gold;
+      }
+      .div2 {
+        width: 400px;
+        height: 900px;
+        background-color: rgb(0, 255, 85);
+      }
+      .div3 {
+        width: 400px;
+        height: 900px;
+        background-color: rgb(162, 0, 255);
+      }
+      .div4 {
+        width: 400px;
+        height: 900px;
+        background-color: rgb(255, 0, 13);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- 超链接标签 -->
+    <!-- 用于页面或文件等的跳转 -->
+    <a href="https://www.mihoyo.com">点击跳转</a>
+    <!-- href中填 / 用于返回原页面 或 上一级页面-->
+    <!-- target属性：用于控制网页打开方式 -->
+    <!-- 属性值：
+     _self：在当前标签页打开
+     _blank：在新标签页打开
+  -->
+    <!-- title属性：鼠标移动到链接文字时，显示title属性的值 -->
+    <a href="/" target="_blank" title="首页">home</a>
+
+    <!-- a标签配合id属性实现页面元素间跳转 -->
+    <a href="#455">跳转到div4</a>
+    <a href="#456">跳转到div3</a>
+    <a href="#457">跳转到div2</a>
+    <a href="#458">跳转到div1</a>
+    <div id="458" class="div1">div1</div>
+    <div id="457" class="div2">div2</div>
+    <div id="456" class="div3">div3</div>
+    <div id="455" class="div4">div4</div>
+  </body>
+</html>

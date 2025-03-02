@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .fu {
+        background-color: red;
+        /* 默认继承：有些属性会默认继承给子元素 */
+        /* 与文字有关的属性会默认继承，其他属性绝大部分不默认继承 */
+        font-size: 25px;
+      }
+
+      .zi {
+        width: 50%;
+        /* 继承关键字：inherit，设置给子元素后，该属性会继承父元素对应的属性 */
+        background-color: inherit;
+        /* 文字大小继承自父元素，也为25px */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="fu">
+      <span>父元素</span>
+      <div class="zi">
+        <span>子元素</span>
+      </div>
+    </div>
+  </body>
+</html>

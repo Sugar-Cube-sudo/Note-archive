@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: wuyu;
+            src: url("../font/ZiYanShiQianChunWuYu-2.ttf");
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cent {
+            margin: 10px;
+            padding: 20px;
+            background-image: linear-gradient(to right, #5D62CC, #FFDDDD);
+            border-radius: 90px;
+            border: 3px solid #FFDDDD;
+        }
+
+        h1 {
+            letter-spacing: 15px;
+            font-size: 50px;
+            font-weight: normal;
+            font-family: "wuyu";
+            color: #fff;
+
+            /* 元素投影 box-shadow */
+            /* 值：
+                  水平偏移 垂直偏移 模糊半径 扩散半径 颜色-非必须 内阴影-非必须-inset
+            */
+            box-shadow: 5px 5px 8px 2px #5D62CC;
+        }
+    </style>
+</head>
+<body>
+    <div class="cent">
+        <h1>秋天是倒放的春天，晚安是爱你的序篇</h1>
+    </div>
+</body>
+</html>

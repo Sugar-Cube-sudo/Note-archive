@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-self: center;
+            align-items: center;
+            /* 子元素排列方向 */
+            flex-direction: column;
+            background-color: #020202;
+        }
+
+        .box {
+            background-image: url("../img/3.png");
+            width: 1000px;
+            aspect-ratio: 564 / 1007;
+            background-size: contain;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 滤镜：模糊 */
+            /* filter: blur(5px); */
+            /* 色相 */
+            /* filter: hue-rotate(100deg); */
+            /* 灰度 */
+            /* filter: grayscale(100%); */
+        }
+
+        .child {
+            width: 200px;
+            height: 1000px;
+            border-radius: 20px;
+            /* background-color: #ffffff1e; */
+            border: 1px solid #ffffff3a;
+            /* backdrop-filter: 该属性影响被子元素覆盖的所有位置 且可以设置多个滤镜效果*/
+            backdrop-filter: hue-rotate(180deg) blur(10px);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="child"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        @font-face {
+            font-family: wy;
+            src: url("../font/ZiYanShiQianChunWuYu-2.ttf");
+        }
+
+        h1 {
+            font-size: 55px;
+            font-family: wy;
+        }
+
+        body {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .box {
+            width: 50%;
+            background-image: url("https://i1.mcobj.com/uploads/20220514_627f639097901.png");
+            background-repeat: no-repeat;
+            aspect-ratio: 16/9;
+            background-size: cover;
+            background-position: center;
+            /* 过渡 */
+            /* 第一项为all，而不是具体属性名时，则所有可以过渡的属性都使用过渡效果 */
+            /* 曲线后的时间为过渡开始的延迟 不写则没有延迟 */
+            transition: all 0.3s linear 0.2s;
+        }
+
+        /* :hover 鼠标交互伪类 */
+        .box:hover {
+            width: 60%;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    <h1>简单鼠标交互动效</h1>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        border: 2px solid red;
+        width: fit-content;
+        display: flex;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        border: 2px solid green;
+        background-color: coral;
+        color: #fff;
+        background-clip: content-box;
+        margin: 10px;
+        padding: 10px;
+      }
+
+      .box-cild {
+        /* 内容区域自适应 */
+        /* 整体宽高以固定为100*100，则内容区域 = 100-border-padding = 100-4-20=76px */
+        /* 宽高同减 */
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">
+        <span>前端</span>
+      </div>
+      <div class="child box-cild">
+        <span>后端</span>
+      </div>
+    </div>
+  </body>
+</html>

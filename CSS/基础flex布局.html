@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .parent {
+        width: 800px;
+        height: 500px;
+        border: 2px solid red;
+        margin: 100px;
+        /* 开启flex布局 */
+        display: flex;
+        /* 修改默认排列方式 */
+        /* 值：
+                  row：横向排列 默认值
+                  column：纵向排列
+            */
+        flex-direction: column;
+        /* 使子元素有一点间隙 */
+        gap: 10px;
+        /* 子元素沿主轴排列方式 */
+        /* 值：
+                  flex-start：主轴开头
+                  flex-end：主轴结尾
+                  center：居中
+                  space-between：平均分布，元素左右不留空间，元素之间空间平分
+                  space-around：平均分布，围绕元素两边的空间相等，元素之间的空间是元素头尾的2倍
+                  space-evenly：平均分布，元素之间的空间完全平分
+            */
+        justify-content: space-between;
+
+        /* 子元素沿交叉轴排列方式 */
+        /* 包含交叉轴 */
+        /* 值：
+               center：居中
+               flex-end：交叉轴结尾
+               flex-start：交叉轴开头
+        */
+        align-items: flex-start;
+      }
+
+      .child {
+        width: 120px;
+        height: 60px;
+        background-color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+      <div class="child"></div>
+      <div class="child"></div>
+    </div>
+    <p>
+      主轴与交叉轴的位置，与元素排列方式有关<br />
+      以横向排列为例
+      <img src="../img/主轴.png" alt="" />
+    </p>
+  </body>
+</html>

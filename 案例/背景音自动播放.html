@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      div {
+        width: 1800px;
+        height: 900px;
+        background-image: url("../img/流萤.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+      }
+
+      div > span {
+        font-size: 25px;
+        background-image: linear-gradient(to right, #5d62cc, #ffdddd);
+        color: #fff;
+        margin-top: 10px;
+        padding: 15px;
+        background-color: #fff;
+        border: 2px solid #ffdddd;
+        border-radius: 50px;
+      }
+
+      span:hover {
+        background-image: linear-gradient(#cfffbd, #b9dfff);
+        color: #ffdddd;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="text">
+      <span>背景音频自动播放</span>
+    </div>
+    <audio id="SnapAny" src="../audio/SnapAny.mp3" loop autoplay></audio>
+    <script>
+      const audioElement = document.getElementById("SnapAny");
+
+      // 播放音频的函数
+      function playAudio() {
+        if (audioElement.paused) {
+          audioElement.play().catch((error) => {
+            console.error("播放失败:", error);
+          });
+        }
+      }
+
+      // 处理交互事件
+      function handleInteraction(event) {
+        playAudio();
+      }
+
+      // 事件类型数组
+      const interactionEvents = [
+        "click",
+        "scroll",
+        "keydown",
+        "mouseenter",
+        "mouseleave",
+      ];
+
+      // 添加事件监听器
+      interactionEvents.forEach((eventType) => {
+        window.addEventListener(eventType, handleInteraction);
+      });
+    </script>
+  </body>
+</html>

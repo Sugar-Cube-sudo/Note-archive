@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /* 在浏览器中，html，body是存在默认样式的 */
+      /* 为便于开发，有时需要取消这些默认样式，就是CSS初始化 */
+      /* 使用通配符标签，将内外边距设置为0 */
+
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .parent {
+        border: 2px solid red;
+        width: fit-content;
+      }
+
+      .child {
+        width: 100px;
+        height: 100px;
+        border: 2px solid green;
+        background-color: coral;
+        color: #fff;
+        background-clip: content-box;
+        margin: 10px;
+        padding: 10px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child">
+        <span>前端</span>
+      </div>
+    </div>
+  </body>
+</html>
