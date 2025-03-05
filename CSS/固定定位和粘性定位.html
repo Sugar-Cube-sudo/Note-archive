@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 200vh;
+        }
+
+        @font-face {
+            font-family: wy;
+            src: url("../font/ZiYanShiQianChunWuYu-2.ttf");
+        }
+
+        .box {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .itm {
+            width: 150px;
+            height: 50px;
+            background-color: #7ccce0;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+        }
+
+        span {
+            font-size: 25px;
+            color: #fff;
+            flex-shrink: 0;
+        }
+
+        h1 {
+            font-family: wy;
+            font-size: 50px;
+            margin-bottom: 5px;
+        }
+
+        .re {
+            /* 固定定位 参考的是整个浏览器窗口 */
+            /* 固定定位的元素在页面滚动时，不会跟随移动 */
+            position: fixed;
+            /* 距离整个窗口的顶部100px，右边100px */
+            top: 100px;
+            right: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="itm">
+            <span>1</span>
+        </div>
+        <div class="itm re">
+            <span>2</span>
+        </div>
+        <div class="itm">
+            <span>3</span>
+        </div>
+        <div class="itm">
+            <span>4</span>
+        </div>
+        <div class="itm">
+            <span>5</span>
+        </div>
+        <div class="itm">
+            <span>6</span>
+        </div>
+    </div>
+</body>
+
+</html>
