@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>极星流浪夜 - 音乐播放器</title>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #ff4b4b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            background: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .video-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .background-video {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .background-video.active {
+            opacity: 1;
+        }
+
+        .player-container {
+            position: relative;
+            width: 800px;
+            height: 600px;
+            background: rgba(0, 0, 0, 0.6);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            padding: 30px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            transition: all 0.3s;
+        }
+
+        .album-art {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 0 auto 30px;
+            overflow: hidden;
+            position: relative;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .album-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .lyrics-container {
+            height: 200px;
+            overflow: hidden;
+            margin: 20px 0;
+            position: relative;
+            mask-image: linear-gradient(to bottom,
+                    transparent 0%,
+                    rgba(0, 0, 0, 1) 10%,
+                    rgba(0, 0, 0, 1) 90%,
+                    transparent 100%);
+        }
+
+        .lyrics {
+            transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+            text-align: center;
+        }
+
+        .lyric-line {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.6);
+            margin: 15px 0;
+            transition: all 0.3s;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+
+        .lyric-line.active {
+            color: var(--primary-color);
+            font-size: 22px;
+            font-weight: bold;
+            transform: scale(1.1);
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        button {
+            background: rgba(255, 255, 255, 0.1);
+            border: none;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        button:hover {
+            background: var(--primary-color);
+            transform: scale(1.1);
+        }
+
+        .progress-container {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+            cursor: pointer;
+            border-radius: 2px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--primary-color);
+            width: 0%;
+            transition: width 0.1s linear;
+            border-radius: 2px;
+        }
+
+        .volume-control {
+            position: absolute;
+            right: 30px;
+            bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: 120px;
+        }
+
+        .volume-slider {
+            width: 100%;
+            height: 4px;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 12px;
+            height: 12px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 优化后的视频容器 -->
+        <div class="video-container">
+            <video class="background-video" 
+                   :class="{ active: isVideoActive }"
+                   :src="currentSong.video" 
+                   ref="backgroundVideo"
+                   loop
+                   muted
+                   preload="auto"></video>
+        </div>
+
+        <div class="player-container">
+            <!-- 专辑封面 -->
+            <div class="album-art">
+                <img ref="albumArt" :src="currentSong.art" alt="Album Art">
+            </div>
+
+            <!-- 歌词区域 -->
+            <div class="lyrics-container">
+                <div class="lyrics" :style="{ transform: `translateY(-${lyricOffset}px)` }">
+                    <div v-for="(line, index) in lyrics" 
+                         :key="index" 
+                         class="lyric-line" 
+                         :class="{ active: currentLineIndex === index }">
+                        {{ line.text }}
+                    </div>
+                </div>
+            </div>
+
+            <!-- 进度条 -->
+            <div class="progress-container" @click="seek">
+                <div class="progress-bar" :style="{ width: progress + '%' }"></div>
+            </div>
+
+            <!-- 控制按钮 -->
+            <div class="controls">
+                <button @click="togglePlay">{{ isPlaying ? '⏸' : '▶' }}</button>
+            </div>
+
+            <!-- 音量控制 -->
+            <div class="volume-control">
+                <input type="range" 
+                       class="volume-slider"
+                       min="0"
+                       max="1"
+                       step="0.01"
+                       v-model="volume"
+                       @input="updateVolume">
+                <span class="volume-icon">{{ volumeIcon }}</span>
+            </div>
+        </div>
+
+        <audio ref="audioPlayer" 
+               @timeupdate="updateProgress" 
+               :volume="volume"
+               preload="auto"></audio>
+    </div>
+
+    <script>
+        const { createApp } = Vue;
+
+        createApp({
+            data() {
+                return {
+                    isPlaying: false,
+                    currentTime: 0,
+                    duration: 0,
+                    currentLineIndex: -1,
+                    lyrics: [],
+                    lyricOffset: 0,
+                    volume: 0.8,
+                    isVideoActive: false,
+                    rotateTween: null,
+                    
+                    songs: [
+                        {
+                            title: '极星流浪夜',
+                            url: './music/极星流浪夜.mp3',
+                            art: './img/极星流浪夜.jpg',
+                            video: './video/1425907275-1-192.mp4',
+                            lrc: './lrc/极星流浪夜.lrc'
+                        }
+                    ]
+                }
+            },
+            computed: {
+                currentSong() {
+                    return this.songs[0];
+                },
+                progress() {
+                    return (this.currentTime / this.duration) * 100 || 0;
+                },
+                volumeIcon() {
+                    return this.volume === 0 ? '🔇' :
+                           this.volume < 0.3 ? '🔈' : '🔊';
+                }
+            },
+            watch: {
+                isPlaying(newVal) {
+                    if (newVal) {
+                        this.$refs.audioPlayer.play();
+                        this.$refs.backgroundVideo.play();
+                        this.startAlbumRotation();
+                        this.isVideoActive = true;
+                    } else {
+                        this.$refs.audioPlayer.pause();
+                        this.$refs.backgroundVideo.pause();
+                        this.pauseAlbumRotation();
+                    }
+                }
+            },
+            mounted() {
+                this.initPlayer();
+            },
+            methods: {
+                async initPlayer() {
+                    await this.loadLyrics();
+                    this.$refs.audioPlayer.src = this.currentSong.url;
+                    this.$refs.backgroundVideo.src = this.currentSong.video;
+                    this.initRotation();
+                },
+
+                async loadLyrics() {
+                    try {
+                        const response = await fetch(this.currentSong.lrc);
+                        const lrcText = await response.text();
+                        this.parseLRC(lrcText);
+                    } catch (error) {
+                        console.error('歌词加载失败:', error);
+                        this.lyrics = [{ text: '歌词加载失败' }];
+                    }
+                },
+
+                parseLRC(lrc) {
+                    const lines = lrc.split('\n');
+                    this.lyrics = lines.map(line => {
+                        const timeMatch = line.match(/\[(\d+):(\d+\.\d+)\]/);
+                        if (timeMatch) {
+                            const minutes = parseInt(timeMatch[1]);
+                            const seconds = parseFloat(timeMatch[2]);
+                            return {
+                                time: minutes * 60 + seconds,
+                                text: line.split(']')[1].trim()
+                            };
+                        }
+                        return { time: 0, text: '' };
+                    }).filter(l => l.text);
+                },
+
+                togglePlay() {
+                    this.isPlaying = !this.isPlaying;
+                },
+
+                updateProgress(e) {
+                    this.currentTime = e.target.currentTime;
+                    this.duration = e.target.duration;
+                    
+                    // 同步视频进度
+                    if (this.$refs.backgroundVideo) {
+                        this.$refs.backgroundVideo.currentTime = this.currentTime;
+                    }
+
+                    // 更新歌词
+                    const currentTime = this.currentTime;
+                    for (let i = this.lyrics.length - 1; i >= 0; i--) {
+                        if (currentTime >= this.lyrics[i].time) {
+                            if (this.currentLineIndex !== i) {
+                                this.currentLineIndex = i;
+                                this.scrollLyrics();
+                            }
+                            break;
+                        }
+                    }
+                },
+
+                scrollLyrics() {
+                    const containerHeight = 200;
+                    const lineHeight = 40;
+                    const targetOffset = this.currentLineIndex * lineHeight - containerHeight/2;
+                    this.lyricOffset = Math.max(0, targetOffset);
+                },
+
+                seek(e) {
+                    const rect = e.target.getBoundingClientRect();
+                    const pos = (e.clientX - rect.left) / rect.width;
+                    const newTime = pos * this.duration;
+                    
+                    this.$refs.audioPlayer.currentTime = newTime;
+                    if (this.$refs.backgroundVideo) {
+                        this.$refs.backgroundVideo.currentTime = newTime;
+                    }
+                },
+
+                updateVolume(e) {
+                    this.volume = parseFloat(e.target.value);
+                },
+
+                initRotation() {
+                    this.rotateTween = gsap.to(this.$refs.albumArt, {
+                        rotation: 360,
+                        duration: 15,
+                        repeat: -1,
+                        ease: 'none',
+                        paused: true
+                    });
+                },
+                startAlbumRotation() {
+                    this.rotateTween.play();
+                },
+                pauseAlbumRotation() {
+                    this.rotateTween.pause();
+                }
+            }
+        }).mount('#app');
+    </script>
+</body>
+</html>

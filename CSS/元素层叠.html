@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            width: 100vw;
+            height: 100%;
+            border: 5px solid blueviolet;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 堆叠上下文 -->
+    <!-- 默认情况下的块级元素环境，需要position属性非static z-index非auto 满足则能产生自己的堆叠上下文 -->
+    <!-- flex布局，grid布局环境下的子元素 满足z-index非auto 即可产生堆叠上下文 -->
+    <!-- 当两个元素在同一层级时，后写的元素会盖在前面元素的上面 -->
+     <div class="coment"></div>
+</body>
+
+</html>
