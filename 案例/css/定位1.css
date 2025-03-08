@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: yh;
+    src: url("../font/Cousine-Italic-2.ttf");
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    height: 600px;
+    width: 1000px;
+    /* border: 1px solid black; */
+    background-color: rgb(236, 234, 232);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 5rem;
+    position: relative;
+    z-index: 0;
+}
+
+.img-produrt {
+    width: 550px;
+}
+
+.title, .number {
+    font-family: yh;
+    position: absolute;
+}
+
+.title {
+    font-size: 7rem;
+    z-index: -1;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+
+.number {
+    z-index: -2;
+    font-size: 25rem;
+    opacity: 0.4;
+}
+
+.circle {
+    height: 100px;
+    width: 100px;
+    background:linear-gradient(rgb(255, 255, 255), rgba(14, 0, 0, 0.123));
+    border-radius: 50%;
+    position: absolute;
+}
+
+.circle1 {
+    left: 30px;
+    bottom: 50px;
+    height: 50px;
+    width: 50px;
+}
+
+.circle2 {
+    top: 30px;
+    right: 50px;
+    height: 120px;
+    width: 120px;
+}

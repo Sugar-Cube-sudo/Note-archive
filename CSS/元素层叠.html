@@ -11,10 +11,78 @@
             padding: 0;
         }
 
-        body {
-            width: 100vw;
+        html {
             height: 100%;
-            border: 5px solid blueviolet;
+            border: 5px solid rgb(5, 5, 5);
+        }
+
+        .coment {
+            width: 800px;
+            height: 700px;
+            border: 4px solid greenyellow;
+            margin: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 20px;
+        }
+        
+        .ev {
+            width: 250px;
+            height: 200px;
+            background-color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 5px;
+        }
+
+        .cli {
+            width: 50px;
+            height: 50px;
+            background-color: yellow;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 堆叠上下文层级：position非static */
+            position: relative;
+            top: 200px;
+        }
+
+        .cli2 {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #0ab5f8;
+        }
+
+        .cli3 {
+            background-color: #1efd56;
+        }
+
+        .ai {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .aii {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fcbc0e;
+            /* z-index层级 3盖在1上面 */
+            z-index: 1;
+        }
+
+        span {
+            font-size: 25px;
         }
     </style>
 </head>
@@ -24,7 +92,24 @@
     <!-- 默认情况下的块级元素环境，需要position属性非static z-index非auto 满足则能产生自己的堆叠上下文 -->
     <!-- flex布局，grid布局环境下的子元素 满足z-index非auto 即可产生堆叠上下文 -->
     <!-- 当两个元素在同一层级时，后写的元素会盖在前面元素的上面 -->
-     <div class="coment"></div>
+     <div class="coment">
+        <div class="ev">
+            <div class="cli">
+                <span>1</span>
+            </div>
+            <div class="cli2">
+                <span>2</span>
+            </div>
+        </div>
+        <div class="ev ev2">
+            <div class="aii">
+                <span>3</span>
+            </div>
+            <div class="ai cli2 cli3">
+                <span>4</span>
+            </div>
+        </div>
+     </div>
 </body>
 
 </html>

@@ -1,0 +1,38 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 200px;
+    height: 500px;
+    border: 2px solid salmon;
+    overflow-y: scroll;
+}
+
+.one-block {
+    width: 100%;
+}
+
+.title {
+    /* sticky定位实现标题粘连 */
+    position: sticky;
+    top: 0px;
+    background-color: rgb(199, 199, 199);
+    font-size: 2rem;
+}
+
+.content {
+    background-color: rgb(246, 220, 255);
+    height: 600px;
+    font-size: 3rem;
+    color: #00000028;
+}
