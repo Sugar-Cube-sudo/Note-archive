@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parent {
+            width: 300px;
+            height: 350px;
+            border: 2px solid salmon;
+            padding: 60px;
+            font-size: 2rem;
+        }
+
+        .child1 {
+            width: 50px;
+            height: 50px;
+            background-color: blue;
+        }
+
+        .child2 {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+            /* display: 显示模式 */
+            /* 可选值：
+                1. **`block`**:
+                   - 元素显示为块级元素，独占一行，可以设置宽度、高度、内外边距等。
+                   - 例如：`<div>`、`<p>`、`<h1>`。
+                
+                2. **`inline`**:
+                   - 元素显示为内联元素，不独占一行，宽度和高度由内容决定，不能设置宽度和高度。
+                   - 例如：`<span>`、`<a>`、`<strong>`。
+                
+                3. **`inline-block`**:
+                   - 元素显示为内联块级元素，不独占一行，但可以设置宽度、高度、内外边距等。
+                   - 例如：结合了 `inline` 和 `block` 的特性。
+                
+                4. **`none`**:
+                   - 元素不显示，且不占据文档流中的空间。
+                   - 例如：隐藏元素。
+                
+                5. **`flex`**:
+                   - 元素显示为弹性盒子容器，子元素可以通过弹性布局进行排列。
+                   - 例如：用于创建灵活的布局结构。
+                
+                6. **`grid`**:
+                   - 元素显示为网格容器，子元素可以通过网格布局进行排列。
+                   - 例如：用于创建复杂的网格布局。
+                
+                7. **`table`, `table-row`, `table-cell`, etc.**:
+                   - 使元素的行为类似于表格中的对应部分。
+                   - 例如：模拟表格布局。
+                
+                8. **``inline-flex``**:
+                   使容器成为内联的弹性盒子容器。类似于 `flex`,但容器本身是内联的,不会独占一行。常用于在行内实现弹性布局。
+                
+                9. **``inline-grid``**
+                   使容器成为内联的网格容器。类似于 `grid`,但容器本身是内联的,不会独占一行。常用于在行内实现网格布局。
+                
+                10. **``list-item``**
+                    使元素表现得像一个列表项(`<li>`)。通常与 `list-style-type`
+                    和 `list-style-position`
+                    属性一起使用,以控制列表标记的外观和位置。
+            */
+            display: inline-flex;
+        }
+
+        .child3 {
+            width: 50px;
+            height: 50px;
+            background-color: cadetblue;
+            /* 设置为none时隐藏元素，不占据空间 */
+            /* display: none; */
+            /* visibility: 元素可见性，设置为hidden时，元素隐藏，但还是占据原来的空间 占据文档流空间 */
+            visibility: hidden;
+        }
+
+        .child4 {
+            width: 50px;
+            height: 50px;
+            background-color: fuchsia;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <span>星枢</span>
+        <div class="child3 "></div>
+        <div class="child4"></div>
+    </div>
+</body>
+
+</html>

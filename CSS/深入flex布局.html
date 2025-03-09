@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parent {
+            width: 500px;
+            height: 500px;
+            border: 2px solid greenyellow;
+            background-image: url("../img/流萤.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            justify-content: center;
+            align-items:center;
+        }
+
+        .child1 {
+            width: 50px;
+            height: 50px;
+            background-color: deepskyblue;
+            /* flex-grow: 在flex布局中，该属性设置给容器子元素 */
+            /* 将剩余空间按设置的值分配给容器子元素 */
+            /* 将所有flex-grow的值相加后，将剩余空间整除，按设置的值分配元素所占空间的份数 该值不能设置负数 */
+            /* 以当前设置为例，所有数值相加为3，剩余空间与3整除后，所有容器子元素各占一份 */
+            /* 该属性会拉伸元素，横向排列则拉伸宽度，高度不变，竖向排列拉伸高度，宽度不变 */
+            /* 默认值为0 */
+            /* flex-grow: 1; */
+
+            /* 收缩 当元素的值很大时，该属性会缩放元素到刚好撑满父元素 */
+            /* 默认值为1 即默认自动收缩 */
+            /* 逻辑与flex-grow相同*/
+            /* flex-shrink: 0; */
+
+            /* 沿主轴方向排列的尺寸，横向排列则是宽，竖向排列则是高 */
+            /* 优先级高于元素本身的宽高 默认值为auto */
+            flex-basis: 200px;
+        }
+        .child2 {
+            width: 50px;
+            height: 70px;
+            background-color: rgb(88, 247, 101);
+            /* flex-grow: 1; */
+            flex-basis: 200px;
+        }
+        .child3 {
+            width: 50px;
+            height: 50px;
+            background-color: rgb(252, 139, 74);
+            /* flex-grow: 1; */
+            flex-basis: 200px;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child1"></div>
+        <div class="child2"></div>
+        <div class="child3"></div>
+    </div>
+</body>
+</html>
