@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .print {
+            padding: 30px;
+            width: 700px;
+            height: 500px;
+            border: 2px solid red;
+            background-color: rgba(255, 0, 255, 0.411);
+            display: flex;
+            justify-content: space-between;
+            position: relative;
+        }
+
+        .re {
+            width: 70px;
+            height: 70px;
+            background-color: #f70692;
+            border-radius: 50%;
+        }
+
+        .box1 {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+        }
+
+        .box2 {
+            position: absolute;
+            bottom: 30px;
+            left: 30px;
+        }
+
+        .box3 {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .box4 {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+        }
+
+        .box5 {
+            position: absolute;
+            top: 30px;
+            right: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="print">
+        <div class="box1 re"></div>
+        <div class="box2 re"></div>
+        <div class="box3 re"></div>
+        <div class="box4 re"></div>
+        <div class="box5 re"></div>
+    </div>
+</body>
+
+</html>

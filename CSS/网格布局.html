@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-box {
+            height: 600px;
+            width: 1000px;
+            background-color: black;
+            color: #fff;
+            font-size: 2rem;
+            display: grid;
+            /* 网格基本设置 */
+            /* 列设置 有几个属性值就是有几列 */
+            /* 单位：fr  根据设置的值，均分剩余空间 */
+            grid-template-columns: 1fr 1fr 1fr;
+            /* 行设置 有几个属性值就是有几行 */
+            grid-template-rows: 1fr 1fr 1fr;
+            /* 取值单位可以是任意常规值，如 % px rem em vh vw */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-box">
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+        <div>111</div>
+    </div>
+</body>
+
+</html>
