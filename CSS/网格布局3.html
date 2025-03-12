@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: aqua;
+        }
+
+        .grid-box {
+            width: 1000px;
+            height: 600px;
+            display: grid;
+            /* 重复：repeat(重复数, 宽度或高度) */
+            /* 可以与其他属性值混用 如auto fr等 */
+            /* 该属性可以实现快速均分容器，以九宫格为例：repeat(3, 1fr)*/
+            /* 关键字：
+                auto-fill
+                auto-fit  该关键字在生成时，如果内部没有元素，会将生成的列/行收缩到0
+                尽可能按照设置的尺寸，生成更多的列/行
+            */
+            /* 容器宽度为1000px，设置宽度为100px 则auto-fill均分出10行 */
+            grid-template-columns: repeat(auto-fill, 100px);
+            /* 同理，高度600px，设置100px，均分6行 */
+            grid-template-rows: repeat(auto-fill, 100px);
+            /* 格子间距 会占据容器空间 可以单独设置列/行间距 */
+            /* row-gap: ;
+            column-gap: ; */
+            gap: 10px;
+            background-color: black;
+        }
+
+        .grid-box > div {
+            width: 100px;
+            height: 50px;
+            background-color: #53fa31e3;
+            border-radius: 30px;
+            border: 2px solid red;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-box">
+        <div>111</div>
+        <div>222</div>
+    </div>
+</body>
+
+</html>

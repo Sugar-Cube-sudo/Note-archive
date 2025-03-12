@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .grid-box {
+            width: 1000px;
+            height: 600px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            padding: 10px;
+            background-color: black;
+            /* 使用css变量来管理每个区块的颜色 */
+            --color-1: #ff6b6b;
+            --color-2: #4ecdc4;
+            --color-3: #45b7d1;
+            --color-4: #96ceb4;
+            --color-5: #ffeead;
+            --color-6: #ff9999;
+            --color-7: #d4a5a5;
+            --color-8: #78c4d4;
+            --color-9: #f2e394;
+
+            /* 元素排列顺序属性：
+              grid-auto-flow: column   先列后行 即竖排
+              默认为先行后列 即横排
+            */
+            /* grid-auto-flow: column; */
+        }
+
+        .child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 为每个区块设置颜色 */
+        .grid-box>.child:nth-child(1) {
+            background-color: var(--color-1);
+            /* 如果不给元素设置宽高，元素会拉伸到网格的宽度和高度 */
+            /* 元素自身宽高与网格宽高无关 */
+            /* 给元素设置宽高 */
+            /* height: 100px;
+            width: 100px; */
+            /* 在grid布局中，也可以使用order属性设置元素排列顺序 原理与flex布局相同 数字越大元素越靠后 */
+            /* order: 1; */
+        }
+
+        .grid-box>.child:nth-child(2) {
+            background-color: var(--color-2);
+        }
+
+        .grid-box>.child:nth-child(3) {
+            background-color: var(--color-3);
+        }
+
+        .grid-box>.child:nth-child(4) {
+            background-color: var(--color-4);
+        }
+
+        .grid-box>.child:nth-child(5) {
+            background-color: var(--color-5);
+        }
+
+        .grid-box>.child:nth-child(6) {
+            background-color: var(--color-6);
+        }
+
+        .grid-box>.child:nth-child(7) {
+            background-color: var(--color-7);
+        }
+
+        .grid-box>.child:nth-child(8) {
+            background-color: var(--color-8);
+        }
+
+        .grid-box>.child:nth-child(9) {
+            background-color: var(--color-9);
+
+            /* 元素放置：设置目标区域的网格线 */
+            /* 左侧列网格线编号 */
+            /* grid-column-start: 2; */
+            /* 右侧列网格线编号 */
+            /* grid-column-end: 3; */
+            /* 行网格线编号 即上方网格线 */
+            /* grid-row-start: 1; */
+            /* 下方行网格线编号 */
+            /* grid-row-end: 2; */
+            /* 一个元素可以占多格，只需要设置到对应网格线编号即可 */
+
+            /* 简写 */
+            /* grid-column: 左 / 右 */
+            /* grid-row: 上 / 下 */
+            grid-column: 2 / 3;
+            grid-row: 1 / 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-box">
+        <div class="child">
+            <span>
+                1
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                2
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                3
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                4
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                5
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                6
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                7
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                8
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                9
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

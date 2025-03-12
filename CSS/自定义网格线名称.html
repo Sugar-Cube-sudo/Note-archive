@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .grid-box {
+            width: 1000px;
+            height: 600px;
+            display: grid;
+            /* 自定义网格线需要配合网格划分属性 */
+            /* 在列宽或行高设置的左右两侧设置名称，对应网格线的原始编号 从1开始 */
+            /* 以下列设置为例，repeat(3, 1fr)重复3次，最终有4条网格线 自定义名称设置在开头和结尾 则是给第一条和最后一条网格线设置自定义名称 */
+            /* repeat划分的网格较特殊，只能给开头和结尾网格线设置名称，无法给中间的网格线设置 */
+            grid-template-columns: [line1] repeat(3, 1fr) [line2];
+            grid-template-rows: [line3] repeat(3, 1fr) [line4];
+            padding: 10px;
+            background-color: black;
+            /* 使用css变量来管理每个区块的颜色 */
+            --color-1: #ff6b6b;
+            --color-2: #4ecdc4;
+            --color-3: #45b7d1;
+            --color-4: #96ceb4;
+            --color-5: #ffeead;
+            --color-6: #ff9999;
+            --color-7: #d4a5a5;
+            --color-8: #78c4d4;
+            --color-9: #f2e394;
+        }
+
+        .child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 为每个区块设置颜色 */
+        .grid-box>.child:nth-child(1) {
+            background-color: var(--color-1);
+        }
+
+        .grid-box>.child:nth-child(2) {
+            background-color: var(--color-2);
+        }
+
+        .grid-box>.child:nth-child(3) {
+            background-color: var(--color-3);
+        }
+
+        .grid-box>.child:nth-child(4) {
+            background-color: var(--color-4);
+        }
+
+        .grid-box>.child:nth-child(5) {
+            background-color: var(--color-5);
+        }
+
+        .grid-box>.child:nth-child(6) {
+            background-color: var(--color-6);
+        }
+
+        .grid-box>.child:nth-child(7) {
+            background-color: var(--color-7);
+        }
+
+        .grid-box>.child:nth-child(8) {
+            background-color: var(--color-8);
+        }
+
+        .grid-box>.child:nth-child(9) {
+            background-color: var(--color-9);
+            /* 使用自定义名称的网格线放置元素 */
+            grid-column: line1 / 2;
+            grid-row: line3 / 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-box">
+        <div class="child">
+            <span>
+                1
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                2
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                3
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                4
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                5
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                6
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                7
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                8
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                9
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>

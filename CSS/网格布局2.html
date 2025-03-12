@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        .grid-box {
+            width: 1000px;
+            height: 600px;
+            background-color: black;
+            color: #fff;
+            display: grid;
+            /* 属性值：auto 自动占满剩余空间 */
+            /* 当与可以自动变化的单位配合使用时，如fr auto属性可以自动适应内容的宽度或高度 */
+            /* 属性值：minmax（最小值，最大值） */
+            grid-template-columns: 100px 200px auto minmax(100px, 1000px);
+            grid-template-rows: 100px auto 200px 1fr;
+
+            /* 空间占用优先级 */
+            /* minmax最高，其次是fr，最后是auto minmax会尽可能多占空间，但不会超过最大值 */
+            /* 为保证最小空间，网格可能超出容器元素的范围 */
+        }
+
+        .number {
+            height: 50px;
+            width: 100px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-box">
+        <div>111</div>
+        <div>222</div>
+    </div>
+</body>
+
+</html>
