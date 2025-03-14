@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            color: #fff;
+        }
+
+        .grid-box {
+            width: 680px;
+            height: 800px;
+            display: grid;
+            grid-template-columns: 120px 150px 200px;
+            grid-template-rows: 200px 150px 200px;
+
+            /* 用于设置元素在网格中的位置 */
+            /* justify-items 水平方向 */
+            /* align-items 垂直方向 */
+            /* 取值均为start end center stretch */
+            /* 对容器内所有元素有效 */
+            justify-items: center;
+            align-items: center;
+
+            /* 网格整体移动属性： */
+            /* justify-content 水平方向 */
+            /* align-content 垂直方向*/
+            /* 取值：
+                start：网格对齐到容器起始边缘
+                end：网格对齐到容器结束边缘
+                center：居中
+                stretch：网格项大小不变 网格线间隔拉伸以填充容器
+                space-around：每个网格项两侧间隔相等
+                space-between：网格项之间间隔相等，第一项贴近起始边缘，最后一项贴近结束边缘
+                space-evenly：网格项之间以及两端的间隔均等分布
+            */
+            justify-content: center;
+            align-content: center;
+
+            padding: 20px;
+            gap: 10px;
+            background-color: black;
+            /* 使用css变量来管理每个区块的颜色 */
+            --color-1: #ff6b6b;
+            --color-2: #4ecdc4;
+            --color-3: #45b7d1;
+            --color-4: #96ceb4;
+            --color-5: #ffeead;
+            --color-6: #ff9999;
+            --color-7: #d4a5a5;
+            --color-8: #78c4d4;
+            --color-9: #f2e394;
+        }
+
+        .child {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 80px;
+        }
+
+        /* 为每个区块设置颜色 */
+        .grid-box>.child:nth-child(1) {
+            background-color: var(--color-1);
+            
+            /* 单独设置某一个元素的位置 */
+            /* align-self 垂直方向 */
+            /* justify-self 水平方向 */
+            /* align-self: start; */
+            /* justify-self: end; */
+            /* 复合写法： */
+            place-self: start end;
+        }
+
+        .grid-box>.child:nth-child(2) {
+            background-color: var(--color-2);
+        }
+
+        .grid-box>.child:nth-child(3) {
+            background-color: var(--color-3);
+        }
+
+        .grid-box>.child:nth-child(4) {
+            background-color: var(--color-4);
+        }
+
+        .grid-box>.child:nth-child(5) {
+            background-color: var(--color-5);
+        }
+
+        .grid-box>.child:nth-child(6) {
+            background-color: var(--color-6);
+        }
+
+        .grid-box>.child:nth-child(7) {
+            background-color: var(--color-7);
+        }
+
+        .grid-box>.child:nth-child(8) {
+            background-color: var(--color-8);
+        }
+
+        .grid-box>.child:nth-child(9) {
+            background-color: var(--color-9);
+        }
+
+        .grid-box>.child:nth-child(10) {
+            background-color: var(--color-1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-box">
+        <div class="child">
+            <span>
+                1
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                2
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                3
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                4
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                5
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                6
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                7
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                8
+            </span>
+        </div>
+        <div class="child">
+            <span>
+                9
+            </span>
+        </div>
+    </div>
+</body>
+
+</html>
