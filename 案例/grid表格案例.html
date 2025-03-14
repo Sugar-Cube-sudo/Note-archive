@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .grid-box {
+            height: 380px;
+            width: 1200px;
+            background-color: rgba(255, 254, 254, 0.178);
+            display: grid;
+            grid-template-columns: repeat(7, 1fr);
+            grid-template-rows: repeat(5, 1fr);
+            /* 居中 */
+            justify-items: start;
+            align-items: center;
+            position: relative;
+            z-index: 0;
+            border: 1px solid rgba(128, 128, 128, 0.479);
+        }
+
+        .fake-parent {
+            display: contents;
+        }
+
+        .bg {
+            width: 100%;
+            height: 100%;
+            grid-row: 1 / 2;
+            grid-column: 1 / 8;
+            background-color: #b3b2b298;
+            position: absolute;
+            z-index: -1;
+            /* opacity: 0.5; */
+        }
+
+        .start-padding {
+            padding-left: 30px;
+        }
+
+        .border-box {
+            font-size: 0.8rem;
+            color: rgba(10, 10, 10, 0.788);
+        }
+
+        .border-box > div {
+            width: 100%;
+            height: 100%;
+            border-bottom: 1px solid rgba(107, 105, 105, 0.575);
+            display: flex;
+            align-items: center;
+        }
+
+        .color-box > div {
+            padding: 6px 8px;
+            background-color: greenyellow;
+            color: #fff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="grid-box">
+        <!-- 数据分组 表头-->
+        <div class="fake-parent table-header">
+            <div class="start-padding">ID</div>
+            <div>Name</div>
+            <div>Time</div>
+            <div>Age</div>
+            <div>Payment Status</div>
+            <div>Amount</div>
+            <div>Tracking Number</div>
+        </div>
+        <!-- 单元格数据 -->
+        <div class="fake-parent border-box">
+            <div class="start-padding">001</div>
+            <div>Mark C.Diaz</div>
+            <div>2025/3/15</div>
+            <div>20</div>
+            <div class="color-box">
+                <div>applet</div>
+            </div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="fake-parent border-box">
+            <div class="start-padding">001</div>
+            <div>Mark C.Diaz</div>
+            <div>2025/3/15</div>
+            <div>20</div>
+            <div class="color-box">
+                <div>applet</div>
+            </div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="fake-parent border-box">
+            <div class="start-padding">001</div>
+            <div>Mark C.Diaz</div>
+            <div>2025/3/15</div>
+            <div>20</div>
+            <div class="color-box">
+                <div>applet</div>
+            </div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="fake-parent border-box">
+            <div class="start-padding">001</div>
+            <div>Mark C.Diaz</div>
+            <div>2025/3/15</div>
+            <div>20</div>
+            <div class="color-box">
+                <div>applet</div>
+            </div>
+            <div>11</div>
+            <div>12</div>
+        </div>
+        <div class="bg"></div>
+    </div>
+</body>
+
+</html>
