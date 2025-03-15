@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+        }
+
+        .cont > img {
+            width: 200px;
+            height: auto;
+            transition: all 0.5s linear;
+            /* 浮动 float*/
+            /* 浮动的关键属性是left right */
+            /* 浮动的元素脱离文档流 浮动的上边界是同级元素最近的未设置浮动元素的下方，没有的话是父元素顶部 */
+            float: right;
+
+        }
+
+        .cont > img:hover {
+            width: 700px;
+            height: auto;
+            border: 1px solid rgba(61, 242, 248, 0.795);
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <!-- 使用浮动可以使元素环绕在被浮动元素周围 -->
+        <img src="../img/3.png" alt="">
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia magni iusto asperiores? Quia debitis harum a quos magni ea, magnam doloremque vitae accusantium, consequuntur eligendi aspernatur odio, omnis asperiores? Nobis?</span>
+        <span>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo, necessitatibus. Iusto quae distinctio, atque magnam labore architecto ut laudantium expedita. Dolor quod animi ipsam nisi explicabo sequi eligendi culpa qui.</span>
+        <span>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque unde accusantium quia eos reiciendis, nihil est quis qui molestiae doloremque, aspernatur velit, quasi ut corrupti? Facilis distinctio quo praesentium nihil!</span>
+    </div>
+</body>
+</html>
