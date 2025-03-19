@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1rem;
+        }
+
+        div {
+            width: 200px;
+            height: 50px;
+        }
+
+        .box {
+            background-color: #7f1af1;
+            /* 分布变化，动画不连贯 */
+            /* 变化分几步 变化时间，可选值：start，end*/
+            transition: all 5s steps(5,start);
+        }
+
+        .box:hover {
+            width: 700px;
+        }
+
+        .box2 {
+            background-color: #1af174;
+            /* 与分步变化对比 */
+            transition: all 1s;
+        }
+
+        .box2:hover {
+            width: 700px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">Steps</div>
+    <br>
+    <div class="box2"></div>
+</body>
+</html>

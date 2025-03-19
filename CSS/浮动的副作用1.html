@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .coment {
+            width: 600px;
+            height: 700px;
+            border: 2px solid red;
+        }
+
+        .box1 {
+            width: 200px;
+            height: 100px;
+            background-color: bisque;
+            /* 设置浮动 */
+            float: right;
+        }
+        
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: fuchsia;
+            /* clear: 清除属性，设置该属性后可以清除浮动的影响，使被设置浮动元素之和的元素不自动补位 因此该元素设置给浮动后面的元素 */
+            /* 清除的不是浮动，而是浮动的影响 */
+            /* 如果不设置clear 则自动补位  */
+            /* 可选值：
+               left：清除左浮动元素的影响
+               right：清除右浮动元素的影响
+               both：无论左右都清除
+            */
+            clear: both;
+
+            /* 父元素塌陷问题及解决方法 */
+            /* BFC */
+        }
+    </style>
+</head>
+<body>
+    <div class="coment">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+</body>
+</html>

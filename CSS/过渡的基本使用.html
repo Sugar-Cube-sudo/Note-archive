@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cont {
+            width: 900px;
+            height: 500px;
+            border: 1px solid chartreuse;
+            background-image: url("../img/4.png");
+            background-size: contain;
+            background-position: center;
+            /* 过渡属性 */
+            /* 设置元素属性变化的过渡 */
+            /* 过渡属性 时间 缓动曲线 延时 */
+            /* 关键字：all  能产生过渡效果的所有属性，都发生变化 */
+            /* 如果要设置单独的属性变化，可以直接使用属性名，如opacity */
+            /* transition: opacity 0.5s linear; */
+            transition: all 0.5s linear;
+        }
+
+        .cont:hover{
+            box-shadow: 5px 5px 8px 2px #5D62CC;
+            width: 70vw;
+            height: 70vh;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont"></div>
+</body>
+</html>
