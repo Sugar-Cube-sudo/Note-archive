@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .print {
+            border: 5px solid #000;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* 基本二维变换 */
+            /* transform：变换 */
+            /* translate() 位移 括号内的值为移动距离 */
+            /* 向右 向下移动100px */
+            /* 取负值则为向左 向上移动100px */
+            /* transform: translate(100px, 100px); */
+
+            /* 单独方向移动 */
+            /* transform: translateX() 水平方向移动 */
+            /* transform: translateY() 垂直方向移动 */
+            transform: translateX(100px);
+
+            /* 缩放 */
+            /* 默认值为1 0-1缩小 1-比1大的正整数放大 */
+            /* transform: scale() */
+            transform: scale(0.5);
+
+            /* 横向缩放 */
+            /* transform: scaleX() */
+            /* 竖向缩放 */
+            /* transform: scaleY() */
+
+            /* 旋转 */
+            /* transform: rotate() */
+            /* 常用单位：deg */
+            /* red： 圆周率 例如转半圈为3.1416rad */
+            /* turn：转一圈 */
+            transform: rotate(45deg);
+
+            /* 倾斜 */
+            /* transform: skew() */
+            transform: skew(68deg, 65deg);
+
+            /* X轴倾斜 */
+            /* transform: skewX() */
+            /* Y轴倾斜 */
+            /* transform: skewY() */
+        }
+    </style>
+</head>
+<body>
+    <div class="print">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

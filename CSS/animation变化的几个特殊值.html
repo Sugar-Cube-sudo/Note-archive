@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 600px;
+            height: 500px;
+            background-image: url("../img/3.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            left: 0;
+            position: relative;
+            animation: colorChange 5s ease-in-out;
+            /* 填充模式  影响动画完成后元素状态
+               默认值： none
+               backwards: 填充动画的开始状态
+               forwards: 填充动画的结束状态
+               both: 填充动画的开始和结束状态
+            */
+            animation-fill-mode: forwards;
+            /* 动画播放状态 */
+            /* 默认值： running 正常播放 */
+            /* paused: 暂停播放 */
+            animation-play-state: running
+        }
+        @keyframes colorChange {
+            0% {
+                left: 0px;
+            }
+            20% {
+                border: 2px solid hotpink;
+                left: 150px;
+            }
+            40% {
+                border: 2px solid forestgreen;
+                left: 200px;
+            }
+            60% {
+                border: 2px solid salmon;
+                left: 250px;
+            }
+            80% {
+                border: 2px solid lawngreen;
+                left: 300px;
+            }
+            100% {
+                border: 2px solid orangered;
+                left: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

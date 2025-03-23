@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 600px;
+            height: 500px;
+            background-image: url("../img/3.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            left: 0;
+            position: relative;
+            /* 应用关键帧定义的动画 */
+            /* 自定义的变化名 时长 时间函数 重复次数 延迟 */
+            /* 时间函数会应用到每个分段，如0--20，20--40，并不是直接0--100的整体 */
+            /* 重复次数关键字infinite  无限次 设置为数字可以控制动画重复次数 */
+            /* 时间函数可以在@keyframes分段设置，设置在哪个分段就影响哪个分段 */
+            /* 补充：动画延迟只影响第一次动画，重复时没有延迟 */
+            animation: colorChange 5s ease-in-out infinite 2s;
+            /* 动画方向 */
+            /* reverse: 反向 */
+            /* alternate: 交替变化，需要配合动画重复 正向 */
+            /* alternate-reverse: 交替变化，需要配合动画重复 反向 */
+            animation-direction: alternate;
+        }
+        /* animation的逻辑是先设置好变化的规律，然后再应用到某个元素上 使目标元素按照设定的逻辑变化*/
+        /* @keyframes 关键帧 */
+        /* @keyframes 自定义的变化名 */
+        @keyframes colorChange {
+            /* 关键字写法：
+               from...to关键字：
+               from {
+                    具体的属性和值
+                    background-color: red;
+                }
+                to {
+                    具体的属性和值
+                    background-color: red;
+                }
+            */
+            /* from {
+                background-color: blueviolet;
+            }
+            to {
+                background-color: navajowhite;
+            } */
+            /* 
+                百分比写法：可以设置多个状态
+                从0%到100%，之间的状态可以设置多个
+            */
+            0% {
+                left: 0px;
+            }
+            20% {
+                border: 2px solid hotpink;
+                left: 150px;
+            }
+            40% {
+                border: 2px solid forestgreen;
+                left: 200px;
+            }
+            60% {
+                border: 2px solid salmon;
+                left: 250px;
+            }
+            80% {
+                border: 2px solid lawngreen;
+                left: 300px;
+            }
+            100% {
+                border: 2px solid orangered;
+                left: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

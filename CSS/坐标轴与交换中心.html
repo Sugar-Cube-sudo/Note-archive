@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .print {
+            border: 5px solid #000;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            /* 变换中心 */
+            /* 该属性影响旋转，缩放等效果 通过关键字的方式设置元素变换中心点 */
+            /* transform-origin */
+            /* 右下角 */
+            transform-origin: bottom right;
+            transform: rotate(0deg);
+            transition: transform 1s;
+            position: relative;
+        }
+
+        .box:hover {
+            transform: rotate(90deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="print">
+        <div class="box"></div>
+    </div>
+</body>
+</html>
