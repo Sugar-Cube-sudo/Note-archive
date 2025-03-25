@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,21 +30,32 @@
             /* 变换中心 */
             /* 该属性影响旋转，缩放等效果 通过关键字的方式设置元素变换中心点 */
             /* transform-origin */
-            /* 右下角 */
-            transform-origin: bottom right;
-            transform: rotate(0deg);
+            /* 可选值有:
+                关键字: top lrft right bottom center
+                具体数值: 100px 200px 50% 50%
+                关键字和数值可以组合使用，如 bottom 30px right
+             */
+            /* 中心点可以设置到元素外部 */
+            /* transform-origin: right bottom; */
+            /* 外部中心点 */
+            transform-origin: 50% 0%;
+            /* transform: rotate(0deg); */
+            transform: scale(1);
             transition: transform 1s;
             position: relative;
         }
 
         .box:hover {
             transform: rotate(90deg);
+            transform: scale(0.5);
         }
     </style>
 </head>
+
 <body>
     <div class="print">
         <div class="box"></div>
     </div>
 </body>
+
 </html>

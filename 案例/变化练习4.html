@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .loading-box {
+            width: 100vw;
+            height: 100vh;
+            /* 加载效果针对整个页面，因此需要使用定位脱离文档流 */
+            position: absolute;
+            background-color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .loading-run {
+            width: 500px;
+            height: 500px;
+            background-image: url('../img/sprite.png');
+            background-position: 0 0;
+            /* 需配合分步函数 */
+            animation: lov 2s steps(32, end) infinite;
+        }
+
+        @keyframes lov {
+            /* 无限循环帧动画 */
+            from {
+                background-position: 0px 0px;
+            }
+            to {
+                background-position: -15500px 0px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-box">
+        <div class="loading-run"></div>
+    </div>
+</body>
+
+</html>

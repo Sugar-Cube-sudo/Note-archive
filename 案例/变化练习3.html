@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .loading-box {
+            width: 100vw;
+            height: 100vh;
+            /* 加载效果针对整个页面，因此需要使用定位脱离文档流 */
+            position: absolute;
+            background-color: #fff;
+            display: flex;
+        }
+
+        .loading-lov {
+            height: 10px;
+            width: 100%;
+            background-color: red;
+            /* 进度条完全移出视口 */
+            transform: translate(-100%);
+            /* 进度条的动画只进行一次，且结束后停留在最后位置，即动画结束状态 */
+            animation: lov 10s forwards;
+        }
+
+
+        @keyframes lov {
+            0% {
+                transform: translate(-100%);
+            }
+
+            25% {
+                transform: translate(-90%);
+            }
+
+            55% {
+                transform: translate(-55%);
+            }
+
+            80% {
+                transform: translate(-10%);
+            }
+
+            100% {
+                transform: translate(0%);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="loading-box">
+        <div class="loading-lov"></div>
+    </div>
+</body>
+
+</html>

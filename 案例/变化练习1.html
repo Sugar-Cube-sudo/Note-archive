@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url("https://pjsekai.sega.jp/assets/data/webp/top/mv/bg_pc.jpg.webp");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .container {
+            width: 500px;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .one-card {
+            width: 200px;
+            height: 200px;
+            background-color: #a1a1a1b9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            /* 定义鼠标样式 当鼠标悬浮于卡片上时变为手型  */
+            cursor: pointer; 
+            transition: all 0.35s;
+            box-shadow: 0 10px 20px -15px rgba(0, 0, 0, 0.5);
+        }
+
+        .one-card > span {
+            font-family: 'momo';
+            font-size: 25px;
+            font-weight: 900;
+            color: black;
+        }
+
+        .one-card:hover {
+            /* 鼠标移动到卡片时，卡片上移并放大 */
+            transform:translateY(-10px) scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="one-card">
+            <span>Hello Code</span>
+        </div>
+        <div class="one-card">
+            <span>Document</span>
+        </div>
+    </div>
+</body>
+</html>
