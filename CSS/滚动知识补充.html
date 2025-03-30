@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins';
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url("../font/MapleMono-NF-CN-Bold.ttf");
+        }
+
+        body {
+            font-size: 3rem;
+            text-transform: capitalize;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 600vh;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 48px;
+        }
+
+        div {
+            height: 300px;
+            width: 50%;
+            max-width: 600px;
+            overflow-x: hidden;
+            overflow-y: scroll;
+            background-position: center center;
+        }
+
+        /* 控制背景图片跟随页面滚动逻辑 */
+        /* 取值：
+                    默认值： scroll
+                    fixed： 元素内部滚动时不动，整个视口滚动时会跟随滚动
+                    local： 背景图随着内容滚动，视口滚动时固定
+            */
+        
+        .scroll {
+            background: url('https://api.img.mtyqx.cn/tapi/large/87c01ec7gy1fs5dmi0fs1j21hc0u0npd.jpg');
+            background-size: cover;
+            background-attachment: scroll;
+        }
+
+        .fixed {
+            background: url('https://api.img.mtyqx.cn/tapi/large/87c01ec7gy1fs5dmi0fs1j21hc0u0npd.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        .local {
+            background: url('https://api.img.mtyqx.cn/tapi/large/87c01ec7gy1fs5dmi0fs1j21hc0u0npd.jpg');
+            background-size: cover;
+            background-attachment: local;
+        }
+
+        /* 滚动条样式设置 */
+        ::-webkit-scrollbar {
+            width: 5px;
+            background-color: #f014d2;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>scroll</h2>
+    <div class="scroll">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea saepe id sit quod placeat voluptatem
+        hic. Numquam cum, molestias veritatis velit in reprehenderit iste. Ullam fugiat expedita dolores aut molestiae!
+    </div>
+
+    <h2>fixed</h2>
+    <div class="fixed">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum placeat repellat tempora ex
+        vero, sunt nulla aspernatur sed hic aperiam rem architecto. Hic, itaque veniam id magni voluptas quia optio!
+    </div>
+
+    <h2>local</h2>
+    <div class="local">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat dignissimos maiores impedit
+        nulla adipisci maxime architecto, reprehenderit temporibus quibusdam animi voluptate et dolor, ratione harum
+        doloremque reiciendis fugit non dolore.</div>
+</body>
+
+</html>

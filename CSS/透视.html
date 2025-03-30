@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url("../font/MapleMono-NF-CN-Bold.ttf");
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conter {
+            width: 200px;
+            height: 200px;
+            /* 透视 */
+            /* 设置给父元素，可以使子元素的三维变化更真实 */
+            /* 值为具体数值 */
+            /* 值越小，透视效果越强，值越大，透视效果越弱 */
+            /* perspective不会覆盖，重复设置会叠加效果，因此，如果要给子元素单独设置perspective，需要去掉父元素的透视效果 */
+            /* 推荐值：500px--1200px */
+            /* perspective: 100px; */
+            perspective: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 255, 0.356);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 当前设置的旋转是围绕Z轴旋转，效果与rotateZ的设置效果相同 */
+            /* transform: rotate(45deg); */
+            /* 通过hover，直观感受围绕X,Y轴旋转 */
+            transform: rotateY(0deg);
+            transition: all 2s;
+        }
+
+        .box:hover {
+            transform: rotateY(45deg);
+        }
+
+        span {
+            font-size: 45px;
+            font-weight: 900;
+            font-family: 'Poppins';
+        }
+    </style>
+</head>
+<body>
+    <div class="conter">
+        <div class="box">
+            <span>Box</span>
+        </div>
+    </div>
+</body>
+</html>

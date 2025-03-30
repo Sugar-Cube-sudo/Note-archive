@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 800px;
+            /* 透视原点 */
+            /* 改变透视视角位置 */
+            /* 默认在中心点 */
+            /* 如：将视角移动到顶部，相当于从上往下看 */
+            /* 可选值：top lrft right bottom center 或 具体数值 */
+            perspective-origin: top;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            /* transform: rotateY(45deg) rotateX(-30deg); */
+            transform-style: preserve-3d;
+            /* animation: boxRotate 5s infinite; */
+            transform-origin: 50% 50% -100px;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            /* opacity: 0.3; */
+        }
+
+        .one {
+            background-color: #46f836;
+        }
+
+        .two {
+            background-color: #f83646;
+            transform: translateZ(-200px);
+        }
+
+        .three {
+            background-color: #2185f7;
+            transform: rotateY(90deg) translateX(100px) translateZ(100px);
+        }
+
+        .four {
+            background-color: #f7f836;
+            transform: rotateY(90deg) translateX(100px) translateZ(-100px);
+        }
+
+        .five {
+            background-color: #f83687;
+            transform: rotateX(90deg) translateZ(100px) translateY(-100px);
+        }
+
+        .six {
+            background-color: #87f836;
+            transform: rotateX(90deg) translateZ(-100px) translateY(-100px);
+        }
+
+        span {
+            font-family: 'Poppins';
+            font-size: 5rem;
+        }
+
+        @keyframes boxRotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card one">
+            <span>1</span>
+        </div>
+        <div class="card two">
+            <span>2</span>
+        </div>
+        <div class="card three">
+            <span>3</span>
+        </div>
+        <div class="card four">
+            <span>4</span>
+        </div>
+        <div class="card five">
+            <span>5</span>
+        </div>
+        <div class="card six">
+            <span>6</span>
+        </div>
+    </div>
+</body>
+</html>

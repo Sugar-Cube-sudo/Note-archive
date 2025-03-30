@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url("../font/MapleMono-NF-CN-Bold.ttf");
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .conter {
+            width: 500px;
+            height: 200px;
+            perspective: 800px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            /* transform-style属性：默认值是flat，即平面，如果设置为preserve-3d，则元素会保持三维效果 当子元素三维变换重叠时，设置该值可以显示正常的三维效果 */
+            transform-style: preserve-3d;
+        }
+
+        .box {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 0, 255);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform: rotateY(0deg);
+            transition: all 2s;
+        }
+
+        .box2 {
+            width: 100%;
+            height: 100%;
+            background-color: rgb(0, 255, 42);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 2s;
+            /* 三维变换透视效果变化：沿Z轴变化时，正值，元素会放大，负值，元素会变小 即近大远小 */
+            /* 如果取消透视，则没有该效果 */
+            /* transform: translateZ(-100px); */
+
+            transform: translateX(-100px) rotateX(180deg);
+            /* backface-visibility属性：默认值是visible，即元素会显示背面，如果设置为hidden，则元素不会显示背面 */
+            backface-visibility: hidden;
+        }
+
+        .box:hover {
+            transform: rotateY(45deg);
+        }
+
+        span {
+            font-size: 45px;
+            font-weight: 900;
+            font-family: 'Poppins';
+        }
+    </style>
+</head>
+<body>
+    <div class="conter">
+        <div class="box">
+            <span>Box</span>
+        </div>
+        <div class="box2">
+            <span>Box</span>
+        </div>
+    </div>
+</body>
+</html>

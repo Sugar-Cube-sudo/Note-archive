@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'Poppins';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 透视 */
+            perspective: 800px;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            /* 旋转整个容器 方便观察 */
+            transform: rotateY(45deg) rotateX(-30deg);
+            /* 按三维逻辑渲染 */
+            transform-style: preserve-3d;
+            animation: boxRotate 5s infinite;
+            /* 使旋转中心位于立方体中心，使动画看起来正常一些 */
+            /* transform-origin属性：设置元素变换原点 */
+            /* 取三个值，分别为 x,y,z */
+            /* 该属性定位的是元素自身变换的基准点，不影响文档流布局 */
+            transform-origin: 50% 50% -100px;
+        }
+
+        .card {
+            width: 200px;
+            height: 200px;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* 使元素脱离文档流叠在一起，方便后面移动和旋转 */
+            position: absolute;
+            /* 设置不透明度，可以看清其他面 */
+            opacity: 0.3;
+        }
+
+        .one {
+            background-color: #46f836;
+            /* 第一面作为参考，不需要移动 */
+        }
+
+        .two {
+            background-color: #f83646;
+            /* 第二面 按Z轴方向移动 */
+            transform: translateZ(-200px);
+        }
+
+        .three {
+            background-color: #2185f7;
+            /* 第三面 旋转 后移动 */
+            transform: rotateY(90deg) translateX(100px) translateZ(100px);
+        }
+
+        .four {
+            background-color: #f7f836;
+            /* 第四面 与第三面移动方向相反 */
+            transform: rotateY(90deg) translateX(100px) translateZ(-100px);
+        }
+
+        .five {
+            background-color: #f83687;
+            /* 第五面 绕X轴旋转 后移动 */
+            transform: rotateX(90deg) translateZ(100px) translateY(-100px);
+        }
+
+        .six {
+            background-color: #87f836;
+            /* 第六面 与第五面移动方向相反 */
+            transform: rotateX(90deg) translateZ(-100px) translateY(-100px);
+        }
+
+        span {
+            font-family: 'Poppins';
+            font-size: 5rem;
+        }
+
+        @keyframes boxRotate {
+            from {
+                transform: rotateX(0deg) rotateY(0deg);
+            }
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="card one">
+            <span>1</span>
+        </div>
+        <div class="card two">
+            <span>2</span>
+        </div>
+        <div class="card three">
+            <span>3</span>
+        </div>
+        <div class="card four">
+            <span>4</span>
+        </div>
+        <div class="card five">
+            <span>5</span>
+        </div>
+        <div class="card six">
+            <span>6</span>
+        </div>
+    </div>
+</body>
+</html>
