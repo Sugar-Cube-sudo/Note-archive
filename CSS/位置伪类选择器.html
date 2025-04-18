@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            font-family: 'Momo';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 2rem;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 800px;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box > :first-child{
+            /* 选中.box的第一个子元素 */
+            color: aquamarine;
+        }
+
+        .box > :last-child{
+            /* 选中.box的最后一个子元素 */
+            color: lawngreen;
+        }
+
+        .box > :nth-child(3) {
+            /* 选中.box的第三个子元素 */
+            color: blueviolet;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span>1</span>
+        <span>2</span>
+        <span>3</span>
+        <span>4</span>
+        <p>p-5</p>
+        <div>div-6</div>
+    </div>
+</body>
+</html>

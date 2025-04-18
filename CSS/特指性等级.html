@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 特指性等级计算： */
+        /* 通用选择器 关系选择器 否定伪类 0,0,0,0 */
+        /* 元素选择器 伪类 0,0,0,1 */
+        /* 类选择器 属性选择器 伪类 0,0,1,0 */
+        /* ID选择器 0,1,0,0 */
+        /* 内联 即style 1,0,0,0 */
+        /* 特殊：!important 等级最高 非必要不使用 */
+
+        /* CSS顺序：在特指性相同的前提下，后写或后引入的CSS样式覆盖前面的样式 */
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            font-family: 'Momo';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* 比较时，特指性等级从左到右比较，最左侧等级最高 */
+        /* 以下列特指性为例：
+            0,1,0
+            0,2,1
+        */
+        /* 从左到右开始比较，相同则比较后面一位，所以，0,2,1优先级比0,1,0高 */
+        .item {
+            /* 特指性：0,1,0 */
+            display: flex;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .item::after {
+            /* 特指性：0,1,0 */
+            content: '';
+            display: block;
+            width: 110%;
+            height: 5px;
+            background-color: blue;
+            position: absolute;
+            bottom: -5px;
+            border-radius: 5px;
+            /* 设置动画 */
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover::after {
+            /* 特指性：0,2,1 */
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="item">
+        特指性等级比较
+    </div>
+</body>
+
+</html>

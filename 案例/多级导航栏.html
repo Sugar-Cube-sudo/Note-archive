@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Momo';
+            font-size: 25px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:link {
+            color: #fff;
+        }
+
+        a:visited {
+            color: #fff;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .nav-box {
+            display: flex;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+        }
+
+        .nav-item {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 30px 50px;
+            background-color: #fff;
+            transition: all 0.2s;
+        }
+
+        .nav-item>div {
+            display: flex;
+            flex-direction: column;
+            padding-top: 12px;
+            position: absolute;
+            top: 100%;
+            transform: translateY(-20px);
+            opacity: 0;
+            transition: all 0.2s;
+            /* 该属性设置元素是否响应鼠标事件 */
+            /* 可选值：auto | none | inherit */
+            /* 此处设置为none 防止鼠标经过二级菜单区域时，二级菜单意外弹出 */
+            pointer-events: none;
+        }
+
+        .nav-item>div>span {
+            padding: 20px;
+            background-color: #5cc0fad0;
+        }
+
+        .nav-item:first-child {
+            border-top-left-radius: 10px;
+            border-bottom-left-radius: 10px;
+        }
+
+        .nav-item:last-child {
+            border-top-right-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav-item>div>span:first-child {
+            border-top-left-radius: 10px;
+            border-top-right-radius: 10px;
+        }
+
+        .nav-item>div>span:last-child {
+            border-bottom-left-radius: 10px;
+            border-bottom-right-radius: 10px;
+        }
+
+        .nav-item:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .nav-item:hover>div {
+            transform: translateY(0px);
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .nav-item>div>span:hover {
+            background-color: #1f1e1ea6;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="nav-box">
+        <div class="nav-item">
+            <span>Home</span>
+            <div>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span>Best</span>
+            <div>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span>Limport</span>
+            <div>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+            </div>
+        </div>
+        <div class="nav-item">
+            <span>Gap</span>
+            <div>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+                <span>
+                    <a href="https://baidu.com">百度</a>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 30px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        a {
+            /* 去除默认下划线 */
+            text-decoration: none;
+        }
+
+        a:link {
+            /* 该伪类设置未点击前的a标签样式 */
+            color: aquamarine;
+        }
+
+        a:visited {
+            /* 该伪类设置点击后的a标签样式 */
+            color: rgb(250, 15, 27);
+        }
+
+        .text:active {
+            /* 该伪类设置激活时的元素样式，如点击 */
+            border: 1px solid rgb(46, 136, 253);
+        }
+
+        input:focus {
+            /* 该伪类设置获得焦点时的元素样式 */
+            border: 3px solid rgb(46, 253, 156);
+        }
+
+        .en:enabled {
+            /* 该伪类设置可用时的元素样式 一般用于表单元素 */
+            border: 3px solid rgb(252, 23, 221);
+        }
+
+        input:disabled {
+            /* 该伪类设置禁用时的元素样式 一般用于表单元素 */
+            border: 5px solid rgb(104, 14, 248);
+        }
+
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: #29ff69;
+        }
+
+        input:checked {
+            /* 该伪类设置选中时的元素样式 一般用于表单元素 */
+            /* 因浏览器限制，该属性不能只接对checked起作用，需要特殊处理，但可以利用该属性实现一些特殊效果 */
+            background-color: #f70808;
+        }
+        input[type="checkbox"]:checked + div {
+            /* 利用:checked伪类实现改变div的背景色，实现类似开关的效果 */
+            background-color: #f70808;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://www.baidu.com/">百度</a>
+    <a href="https://www.mihoyo.com/">米哈游</a>
+    <div class="text">
+        <span>Hello</span>
+    </div>
+    <input type="text">
+    <input type="text" class="en">
+    <input type="text" disabled>
+    <input type="checkbox" checked>
+    <div class="box"></div>
+</body>
+</html>

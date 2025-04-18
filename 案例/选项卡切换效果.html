@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Momo';
+            font-size: 25px;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            perspective: 800px;
+        }
+
+        input {
+            display: none;
+        }
+
+        .cards-box {
+            width: 800px;
+            height: 800px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        .cards-box > label {
+            padding: 0 20px;
+            font-style: 1.6rem;
+            color: rgb(134, 134, 134);
+        }
+
+        .radio-input:checked + label {
+            /* 选中状态字体颜色为黑色 */
+            color: black;
+        }
+
+        .tab-conent {
+            width: 800px;
+            height: 800px;
+            position: absolute;
+            top: 40px;
+            opacity: 0;
+            border: 2px solid chartreuse;
+            margin-top: 10px;
+        }
+
+        .tab1 {
+            background-image: url("./img/初音3.webp");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .tab2 {
+            background-image: url("./img/初音6.webp");
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: cover;
+        }
+
+        .tab3 {
+            background-image: url("./img/初音1.webp");
+            background-repeat: no-repeat;
+            /* background-position: center center; */
+            background-size: cover;
+        }
+
+        .radio-input:checked + label + .tab-conent {
+            opacity: 1;
+        }
+
+        .hr::after {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background-color: #35d0f7;
+            border-radius: 50px;
+            transform: scaleX(0);
+            /* 设置变化时的原点位置 */
+            transform-origin: left center;
+            transition: transform 0.3s ease;
+        }
+
+        .hr:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="cards-box">
+        <input type="radio" name="tab-box" id="cards1" class="radio-input">
+        <label for="cards1" class="hr">
+            选项卡1
+        </label>
+        <div class="tab-conent tab1"></div>
+        <input type="radio" name="tab-box" id="cards2" class="radio-input">
+        <label for="cards2" class="hr">
+            选项卡2
+        </label>
+        <div class="tab-conent tab2"></div>
+        <input type="radio" name="tab-box" id="cards3" class="radio-input">
+        <label for="cards3" class="hr">
+            选项卡3
+        </label>
+        <div class="tab-conent tab3"></div>
+    </div>
+</body>
+</html>

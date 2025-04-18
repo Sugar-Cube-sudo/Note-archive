@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 为实现响应式，有些视窗单位是为适配移动端而出现的 */
+        /* 移动端视窗单位：
+            lvh 大型视口高度 不包括浏览器UI
+            lvw 大型视口宽度 不包括浏览器UI
+            svh 小型视口高度 不包括浏览器UI
+            svw 小型视口宽度 不包括浏览器UI
+            dvh 动态视口高度，会根据浏览器 UI 的显示/隐藏自动调整
+            dvw 动态视口宽度，会根据浏览器 UI 的显示/隐藏自动调整
+        */
+        /* 文字大小的响应式设计使用的单位一般是px em rem */
+        /* em根据父元素尺寸设置 rem根据根元素，即html的大小设置 */
+        /* 如果页面中的文字需要跟随页面变化，可以使用视口单位，设置vw时，视口宽度变化时，文字变化，设置vh时，视口高度变化时，文字变化 */
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Momo';
+        }
+
+        .text {
+            width: 100vw;
+            height: 50vh;
+            background-color: #53c9f8f3;
+            /* 使用视口单位实现文字随页面变化 */
+            font-size: 5vw;
+            color: aquamarine;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border: 2px solid aqua;
+        }
+
+        .text:hover {
+            color:aqua
+        }
+    </style>
+</head>
+
+<body>
+    <div class="text">
+        <span>潮汐集</span>
+    </div>
+</body>
+
+</html>

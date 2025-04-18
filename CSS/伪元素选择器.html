@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Momo';
+            font-size: 1.5rem;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .box>div:nth-of-type(1) {
+            border: 2px solid rgb(255, 0, 0);
+        }
+
+        /* 伪元素选择器能够在页面中产生虚拟的元素 */
+        /* 与伪类的区别是 伪元素选择器针对的不是页面已有的元素 */
+        /* 伪元素选择器：
+            ::before 在元素之前插入内容
+            ::after 在元素之后插入内容
+            ::first-line 第一行
+            ::first-letter 第一个字符
+            ::selection 选中元素
+            ::backdrop 背景层
+            ::placeholder 占位符
+            ::marker 列表项标记
+        */
+        /* 单独使用伪元素时，作用于整个页面的所有元素 */
+
+        .box>div:nth-of-type(1)::after {
+            /* 在元素之后插入内容 */
+            /* 该属性必须写 当不需要插入任何内容时，字符串留空 */
+            content: 'Hello World';
+            color: skyblue;
+            margin-left: 15px;
+        }
+
+        .box>div:nth-of-type(1)::before {
+            /* 在元素之前插入内容 */
+            content: '';
+            background-image: url(https://mc.kurogames.com/static4.0/favicon.ico);
+            /* 伪元素默认是行内元素，设置宽高时需要转换 */
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin-right: 15px;
+        }
+
+        .box > p:nth-of-type(1)::first-line {
+            /* 在第一行文字插入内容 */
+            color: rgb(255, 0, 0);
+        }
+
+        .box > p:nth-of-type(1)::first-letter {
+            /* 在第一个字符插入内容 */
+            color: blue;
+        }
+
+        /* 单独使用 作用与页面所有元素 */
+        ::selection {
+            background-color: rgb(16, 139, 150);
+        }
+    </style>
+</head>
+
+<body>
+    <p></p>
+    <div class="box">
+        <span>Hello</span>
+        <span>Word</span>
+        <div>2025</div>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo vel fugiat, impedit repellat nobis minus
+            deserunt libero. Aut vitae libero odio a repudiandae dolorem quas eius ipsum totam! Optio, omnis?</p>
+    </div>
+</body>
+
+</html>

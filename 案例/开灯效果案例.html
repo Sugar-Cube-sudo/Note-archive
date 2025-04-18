@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 4rem;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            perspective: 800px;
+            background-color: black;
+        }
+
+        .light-box {
+            display: flex;
+            flex-direction: column;
+            justify-self: center;
+            align-items: center;
+            gap: 75px;
+        }
+
+        .light-affect {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .touch-area {
+            width: 150px;
+            height: 30px;
+            background-color: #fff;
+            border-radius: 50px;
+            transition: all 0.2s;
+        }
+
+        .touch-area:hover {
+            cursor: pointer;
+            background-color: #3f3f3fb4;
+        }
+
+        .light-affect > div {
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 50%;
+        }
+
+        .light-affect > :first-child {
+            position: absolute;
+            background-color: black;
+            z-index: 2;
+            transition: all 0.2s;
+        }
+
+        .light-affect > :last-child {
+            /* 模拟发光的元素 */
+            /* filter: blur(100px); */
+            /* 发光的元素调小，防止出现白边 */
+            width: 280px;
+            height: 280px;
+            transition: all 0.2s;
+        }
+
+        /* 当用户悬停在具有类名touch-area的元素上时，对其相邻兄弟元素中类名为light-affect的子元素的第一个子元素应用的样式 */
+        .touch-area:hover + .light-affect > :first-child {
+            background-color: #fff;
+        }
+
+        /* 当用户悬停在具有类名touch-area的元素上时，对其相邻兄弟元素中类名为light-affect的子元素的最后一个子元素应用样式 */
+        .touch-area:hover + .light-affect > :last-child {
+            /* 通过设置模糊来模拟发光 */
+            filter: blur(100px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="light-box">
+        <div class="touch-area"></div>
+        <div class="light-affect">
+            <div class="main-light"></div>
+            <!-- 模拟发光的元素 -->
+            <div></div>
+        </div>
+    </div>
+</body>
+
+</html>

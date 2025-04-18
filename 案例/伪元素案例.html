@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>动态下划线</title>
+    <style>
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            font-family: 'Momo';
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-size: 1.5rem;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item {
+            display: flex;
+            justify-content: center;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .item::after {
+            content: '';
+            display: block;
+            width: 110%;
+            height: 5px;
+            background-color: blue;
+            position: absolute;
+            bottom: -5px;
+            border-radius: 5px;
+            /* 设置动画 */
+            transform: scaleX(0);
+            transform-origin: left center;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover::after {
+            transform: scaleX(1);
+        }
+    </style>
+</head>
+<body>
+    <div class="item">
+        Hello World
+    </div>
+</body>
+</html>

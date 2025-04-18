@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 响应式布局简述 */
+        /* 网页响应式设计(Responsive Web Design)是一种使网站能够自动适应不同设备屏幕尺寸和方向的设计方法 */
+        /* 主要特点：
+            流体网格布局(Fluid Grids)：
+
+            使用相对单位(如百分比)而非固定像素
+            元素尺寸随屏幕大小变化而弹性调整
+            弹性图片和媒体(Flexible Images/Media)
+            图片和视频等媒体元素能自动缩放
+            使用max-width:100%确保不超出容器
+            CSS媒体查询(Media Queries)
+            根据设备特性(如屏幕宽度、分辨率)应用不同样式
+            典型断点：768px(平板)、992px(桌面) 
+        */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .parent {
+            /* 固定的宽高，无法实现响应式 */
+            /* 可以利用 vw vh % 等相对单位来实现元素的逐步变化，实现响应式 */
+            /* width: 800px; */
+            width: 50%;
+            height: 200px;
+            background-color: greenyellow;
+        }
+
+        .child {
+            width: 50vw;
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="parent">
+        <div class="child"></div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 300px;
+            height: 400px;
+            background-color: #7b2bfc;
+        }
+
+        .box2 {
+            width: 100px;
+            height: 100px;
+            background-color: #f7f836;
+        }
+
+        .box2:hover {
+            background-color: #f83646;
+        }
+
+        /* 伪类选择器 选中元素某种状态 一般与基本选择器和关系选择器配合使用 */
+        /* 常用伪类选择器 */
+        /* 链接伪类：
+            :link 未访问的链接样式 
+            :visited 已访问的链接样式
+        */
+        /* 用户行为伪类：
+            :hover 鼠标悬停时元素的样式  
+            :active 元素被激活（如点击）时的样式 
+            :focus 元素获得焦点时的样式
+        */
+        /* 输入表单伪类：
+            :enabled 可用状态的表单元素 
+            :disabled 禁用状态的表单元素  
+            :checked 被选中的单选/复选框
+        */
+        /* 位置/结构伪类：
+            :first-child 作为父元素第一个子元素的元素
+            :last-child 作为父元素最后一个子元素的元素
+            :only-child 作为父元素唯一子元素的元素
+            :only-of-type 父元素中同类型唯一元素的元素
+            :first-of-type 父元素中同类型元素的第一个
+            :last-of-type 父元素中同类型元素的最后一个 
+            :nth-child(n) 根据位置选择子元素（n为公式/数字/关键字） 
+            :nth-last-child(n) 从末尾反向计数的子元素位置
+            :nth-of-type(n) 同类型元素中按位置选择
+            :nth-last-of-type(n) 同类型元素从末尾反向计数选择
+        */
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="box2"></div>
+    </div>
+</body>
+
+</html>

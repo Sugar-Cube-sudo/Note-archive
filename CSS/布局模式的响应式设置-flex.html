@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .parent {
+            /* width: 800px; */
+            /* 使用相对单位实现响应式 */
+            width: 80vw;
+            height: 300px;
+            background-color: chartreuse;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .child {
+            /* 父元素设置相对单位，当父元素收缩时，子元素自动压缩 */
+            width: 100px;
+            height: 100px;
+            background-color: #fff;
+            /* 生长值，设置为1，表示子元素均分父元素剩余空间 */
+            /* 收缩和生长只针对主轴空间 */
+            /* 如果需要占满交叉轴方向，则将宽度或高度设置为100%，也可以取消宽度或高度，设置哪个取决于交叉轴位置 */
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child"></div>
+        <div class="child"></div>
+    </div>
+</body>
+</html>

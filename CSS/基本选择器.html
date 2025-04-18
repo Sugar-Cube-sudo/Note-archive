@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            /* 通用选择器 */
+            /* 选中所有元素，一般用于初始化一些默认样式 */
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @font-face {
+            font-family: 'poppi';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cont {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+            font-family: 'poppi';
+        }
+
+        /* 属性选择器 */
+        /* [attr]: 存在某属性 */
+        /* [attr=value]: 属性值等于特定值 */
+        /* [attr~=value]: 属性值具有多个空格分隔的值中的一个 */
+        /* [attr|="value"]: 属性值是特定值或以该值后连接字符开始 */
+        /* [attr^=value]: 属性值以特定值开头 */
+        /* [attr$=value]: 属性值以特定值结尾 */
+        /* [attr*=value]: 属性值包含特定值 */
+        [title] {
+            /* 选中具有title属性的元素 */
+            border: 1px solid red;
+        }
+        [title="coon"] {
+            /* 选中title属性值等于coon的元素 */
+            border: 1px solid blue;
+        }
+
+        /* 基本选择器可以连起来使用 设置多个条件进行精确选择 */
+        div.test[title="coon"] {
+            /* 选中class值为test且title属性值等于coon的元素 */
+            border: 3px solid green;
+        }
+    </style>
+</head>
+<body>
+    <div class="cont">
+        <h1 title="">属性选择器</h1>
+        <h2 title="coon">h2</h2>
+        <div class="test" title="coon">
+            <img src="../img/2.jpg" alt="">
+        </div>
+    </div>
+</body>
+</html>

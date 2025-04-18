@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background-image: url("../img/3.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        /* 关系选择器 */
+        /* 后代选择器：A B */
+        /* 直接子元素选择器：A > B */
+        /* 相邻兄弟选择器 ：A + B */
+        /* 通用兄弟选择器 ：A ~ B */
+        .c1 .box1 {
+            /* 后代选择器 */
+            /* box1是c1的后代元素 */
+            width: 100px;
+            height: 50px;
+            background-color: #68fd5a;
+            color: #fff;
+        }
+
+        .c2>span {
+            /* 直接子元素选择器 */
+            /* span是c2的直接子元素 */
+            width: 100px;
+            height: 50px;
+            background-color: #f83646;
+            color: aqua;
+        }
+
+        .c3+.s1 {
+            /* 相邻兄弟选择器 */
+            /* s1是c3的下一个兄弟元素 且两者相邻*/
+            width: 100px;
+            height: 50px;
+            background-color: #2185f7;
+            color: #fff;
+        }
+
+        .c4~.s2 {
+            /* 通用兄弟选择器 */
+            /* s2是c4的下一个兄弟元素 但两者不相邻，之间有c5 因此可可以使用通用兄弟选择器*/
+            width: 100px;
+            height: 50px;
+            background-color: #f7f836;
+            color: #f73131;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="c1">
+        <div class="box1">
+            <span>后代选择器</span>
+        </div>
+    </div>
+    <div class="c2">
+        <span>直接子元素选择器</span>
+    </div>
+    <div class="c3"></div>
+    <span class="s1">相邻兄弟选择器</span>
+    <div class="c4"></div>
+    <div class="c5"></div>
+    <span class="s2">通用兄弟选择器</span>
+</body>
+
+</html>

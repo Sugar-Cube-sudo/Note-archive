@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tog {
+            width: 150px;
+            height: 60px;
+            background-color: #47474791;
+            border-radius: 200px;
+            position: relative;
+        }
+
+        .tog::after {
+            content: '';
+            width: 50px;
+            height: 50px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: block;
+            position: absolute;
+            top: 5px;
+            left: 7px;
+            transition: all 0.2s linear;
+        }
+
+        .tog:hover {
+            background-color: rgb(150, 127, 255);
+        }
+
+        .tog:hover::after {
+            transform: translate(85px);
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="tog">
+        
+    </div>
+</body>
+</html>

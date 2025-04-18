@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            /* 根元素伪类 */
+            /* 匹配根元素，即<html></html> */
+            /* 用于设置一些基础性设定 */
+            margin: 0;
+        }
+
+        div {
+            width: 100px;
+            height: 50px;
+            font-size: 30px;
+        }
+
+        div:empty {
+            /* 匹配没有任何子元素的元素 */
+            /* 此处的子元素要求不能包含任何文字，图片，换行符，空白符，标签等 */
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        Hello
+    </div>
+    <div></div>
+</body>
+
+</html>

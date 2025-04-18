@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Momo';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Momo';
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box {
+            width: 800px;
+            height: 300px;
+            background-color: aquamarine;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box>span {
+            font-size: 35px;
+        }
+
+        /* 媒体查询 用于实现响应式*/
+        /* 查询设备相关特征并根据情况设置CSS规则 */
+        /* 写法： */
+        /* @media [媒体类型] and( 逻辑运算符 ) ([媒体特征]){ [CSS规则] } */
+
+        /* 媒体类型：
+            all 所有类型 默认值
+            screen 计算机屏幕 平板电脑 智能手机
+            print 打印机
+            speech 屏幕阅读器等语音合成器类型
+        */
+
+        /* 媒体特征：
+            详见MDN
+        */
+        /* 当判断是否支持鼠标时，将媒体特征写为hover: hover */
+        /* 除and外，另两个逻辑运算符为：not , not表示：只要不是xxx都可以 ,表示或 */
+        /* 如：not screen 表示 只要不是屏幕类型的都可以 */
+        /* 如：screen,(min-width: 860px) 表示屏幕类型或最小宽度大于860px都可以，两者满足一个则规则生效 */
+
+        /* min-width： 最小宽度 大于等于某个尺寸时生效 */
+        /* max-width： 最大宽度 小于等于某个尺寸时生效 */
+        /* 表示范围的写法： */
+        /* @media (min-width: 600px) and (max-width: 1000px) {} */
+        /* 表示：600px <= width <= 1000px */
+        @media screen and (min-width: 860px) {
+            .box>span {
+                font-size: 45px;
+                color: brown;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <span>Hello Wold</span>
+    </div>
+</body>
+
+</html>
