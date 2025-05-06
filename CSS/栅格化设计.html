@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'myfont';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        :root {
+            --bgc:rgba(27, 247, 27, 0.801);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .box {
+            display: grid;
+            grid-template-columns: repeat(12,1fr);
+            grid-template-rows: 300px;
+            grid-auto-rows: 300px;
+            grid-gap: 20px;
+        }
+
+        .child {
+            background-color: var(--bgc);
+            /* 网格布局扩展：span关键字 表示占用几列 如：占用6列： */
+            grid-column: span 6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            font-family: 'myfont';
+            font-size: 2rem;
+        }
+        
+        /* 网页设计中的响应式栅格化设计 */
+        /* 利用网格实现 */
+        @media screen and (max-width: 1024px) {
+            /* 小于1024时，占用4列 */
+            .box {
+                grid-template-columns: repeat(8,1fr);
+            }
+            .child {
+                grid-column: span 4;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="child child1">
+            <span>1</span>
+        </div>
+        <div class="child child2">
+            <span>2</span>
+        </div>
+        <div class="child child3">
+            <span>3</span>
+        </div>
+        <div class="child child4">
+            <span>4</span>
+        </div>
+        <div class="child child5">
+            <span>5</span>
+        </div>
+        <div class="child child6">
+            <span>6</span>
+        </div>
+    </div>
+</body>
+</html>

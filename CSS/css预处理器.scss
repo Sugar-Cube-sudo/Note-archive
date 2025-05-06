@@ -1,0 +1,58 @@
+// 变量写法 Variables
+$color: #f00;
+
+// 嵌套写法 Nesting
+.container {
+    .box {
+        background: $color;
+    }
+
+    // &：在嵌套结构中引用父级选择器
+    &.active {
+        color: $color;
+    }
+}
+
+// 可重用代码块 Mixins
+@mixin border-radius($radius) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    border-radius: $radius;
+}
+
+.box {
+    @include border-radius(10px);
+}
+
+// 继承  Extend/Inheritance
+%message-shared {
+    border: 1px solid #ccc;
+    padding: .5em;
+    color: #333;
+}
+
+.success {
+    @extend %message-shared;
+    border-color: green;
+}
+
+.error {
+    @extend %message-shared;
+    border-color: red;
+}
+
+// 运算符 Operators 
+.container {
+    width: 100%;
+
+    article {
+        float: left;
+        width: (600px / 960px)*100%;
+    }
+
+    aside {
+        float: right;
+        width: (300px / 960px)*100%;
+    }
+}

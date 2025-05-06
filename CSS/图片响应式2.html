@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        body {
+            padding: 10px;
+            margin: 0;
+            min-width: 320px;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            /* height: 400px;
+
+            object-fit: cover;
+            /* background-size */
+            /* object-position: 100px 200px; */
+            /* background-position */
+        }
+
+        .container {
+            background-color: blueviolet;
+            width: 100%;
+        }
+
+        .container>span {
+            font-size: 3rem;
+        }
+
+        .medium-cat-text {
+            display: none;
+        }
+
+        .large-cat-text {
+            display: none;
+        }
+
+        @media screen and (min-width: 481px) {
+
+            .medium-cat-text {
+                display: block;
+            }
+
+            .small-cat-text {
+                display: none;
+            }
+
+            .container>span {
+                font-size: 5rem;
+            }
+
+
+        }
+
+        @media screen and (min-width: 769px) {
+            .medium-cat-text {
+                display: none;
+            }
+
+            .large-cat-text {
+                display: block;
+            }
+
+            .container>span {
+                font-size: 10rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- 该标签用于响应式图像加载，它们允许根据不同的设备条件（如屏幕尺寸、分辨率等）提供最适合的图像资源 -->
+        <!-- <picture> 是一个容器元素，它为其中的 <img> 元素提供多个图像源选项。浏览器会根据当前条件选择最合适的源 -->
+        <picture>
+            <!-- <source> 定义在 <picture>、<audio> 或 <video> 中，用于指定不同的媒体资源。在 <picture> 中，它可以有以下属性：
+            srcset：指定图像的 URL（必须）
+            media：媒体查询条件（可选）
+            type：图像的 MIME 类型（可选）
+            sizes：指定不同布局下的图像显示尺寸（可选） -->
+            <!-- 同时最多只能有一个source标签起作用 -->
+            <source media="(max-width: 480px)" srcset="
+            ../img/smallcat_600_3x2_2x.jpg 600w,
+            ../img/smallcat_900_3x2_3x.jpg 900w,
+            ">
+            <source media="(min-width: 481px)" srcset="
+            ../img/mediumcat_700_16x10_1x.jpg 700w,
+            ../img/mediumcat_1400_16x10_2x.jpg 1400w,
+            ../img/largecat_1200_16x10_1x.jpg 1200w,
+            ../img/largecat_2400_16x10_2x.jpg 2400w
+            ">
+            <!-- picture内必须要有img标签，且写在最后面 -->
+            <img src="../img/largecat_2400_16x10_2x.jpg" alt="">
+        </picture>
+        <span class="small-cat-text">small cat</span>
+        <span class="medium-cat-text">medium cat</span>
+        <span class="large-cat-text">large cat</span>
+    </div>
+</body>
+
+</html>

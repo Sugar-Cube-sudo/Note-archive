@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'Noto Sans SC';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        :root {
+            /* 朱红 */
+            --cinnabar-red: #d93a49;
+
+            /* 缃色 */
+            --willow-yellow: #e5c546;
+
+            /* 黛蓝 */
+            --indigo-blue: #2a5caa;
+
+            /* 松绿 */
+            --pine-green: #207f4c;
+
+            /* 官绿 */
+            --official-green: #4b8e44;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Noto Sans SC';
+            font-size: 1.5rem;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* scroll-snap: 滚动对齐属性 分为容器属性和子元素属性 */
+        /* 容器属性：
+            scroll-snap-type
+            scroll-padding
+        */
+        /* 
+            子元素属性：
+            scroll-snap-align
+            scroll-snap-stop
+            scroll-margin
+        */
+
+        .container {
+            display: flex;
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 1200px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+            /* 在水平方向设置滚动对齐属性 滚动结束时总会对齐到最近的捕捉点 */
+            scroll-snap-type: x mandatory;
+        }
+
+        .item {
+            min-width: 80%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            height: 300px;
+            margin: 10px;
+            border-radius: 10px;
+            /* 设置滚动容器内的子元素（滚动快照点）对齐方式的属性 中间对齐 */
+            scroll-snap-align: center;
+        }
+
+        .item:nth-child(1) {
+            background-color: var(--cinnabar-red);
+        }
+
+        .item:nth-child(2) {
+            background-color: var(--indigo-blue);
+        }
+
+        .item:nth-child(3) {
+            background-color: var(--official-green);
+        }
+
+        .item:nth-child(4) {
+            background-color: var(--pine-green);
+        }
+
+        .item:nth-child(5) {
+            background-color: var(--willow-yellow);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item">Item 1</div>
+        <div class="item">Item 2</div>
+        <div class="item">Item 3</div>
+        <div class="item">Item 4</div>
+        <div class="item">Item 5</div>
+    </div>
+</body>
+
+</html>

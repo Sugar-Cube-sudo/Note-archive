@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'iconfont';
+            src: url('../font/MapleMono-NF-CN-Italic.ttf');
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'iconfont';
+            font-size: 26px;
+        }
+
+        body {
+            min-width: 320px;
+        }
+
+        .parent {
+            height: 300px;
+            width: 50vw;
+            background-color: greenyellow;
+            font-size: 2rem;
+            text-align: center;
+            /* 容器查询 给被查询的容器设置该值，样式才会生效 */
+            /* 取值：
+                size: 设置该值时，容器查询可以同时写宽度和高度 如：(min-width: 300px) and (max-height: 500px)
+                inline-size: 设置该值时，不能同时查询宽度和高度，只能查询元素内文字书写方向的尺寸，水平方向则查询宽度，垂直方向则查询高度
+                normal: 默认值，不设置容器查询
+            */
+            container-type: size;
+            /* 给容器取名，用于在容器查询时指定特定的容器 */
+            container-name: parent;
+        }
+
+        .child {
+            height: 100px;
+            width: 100%;
+            background-color: darkorange;
+        }
+        /* 容器查询针对某个元素的容器，即该元素的直接父级，查询容器的宽高 */
+        @container parent (min-width: 300px) {
+            /* container 容器名 条件 */
+            /* 容器宽度大于等于500px时，样式才会生效 */
+            .child {
+                background-color: red;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        Hello
+        <div class="child"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'PingFang SC';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC';
+        }
+
+        body {
+            padding: 10px;
+            min-width: 320px;
+            box-sizing: border-box;
+        }
+
+        .plen {
+            width: 100%;
+            gap: 10px;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 100px;
+            grid-auto-rows: 100px;
+        }
+
+        .text {
+
+            background-color: greenyellow;
+            font-size: 30px;
+        }
+
+        /* 设备常见尺寸 单位dp：
+            移动设备：最小320 最大480
+            平板电脑：最小720 最大1024
+            笔记本电脑：最小1128 最大2560
+            台式机：最小1280 最大3440
+        */
+        /* 可以按范围设置媒体查询的媒体特征 即双边断点 */
+        /* 更优化的媒体查询覆盖方式：无间隔覆盖
+            如：0-480 481-1024 ...
+        */
+
+        /* 断点设置模式：
+            移动优先： min-width
+            桌面优先： max-width
+        */
+        @media (min-width: 481px) {
+            /* 移动优先 设置最小宽度481 即大于等于481 */
+            .plen {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (min-width: 1025px) {
+            /* 移动优先 同理 */
+            .plen {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+        @media (min-width: 1921px) {
+            /* 移动优先 同理 */
+            .plen {
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+            }
+        }
+
+        /* 桌面优先与移动优先相反，从大往小做 */
+    </style>
+</head>
+<body>
+    <div class="plen">
+        <div class="text">
+            <span>1</span>
+        </div>
+        <div class="text">
+            <span>2</span>
+        </div>
+        <div class="text">
+            <span>3</span>
+        </div>
+        <div class="text">
+            <span>4</span>
+        </div>
+        <div class="text">
+            <span>5</span>
+        </div>
+        <div class="text">
+            <span>6</span>
+        </div>
+        <div class="text">
+            <span>7</span>
+        </div>
+        <div class="text">
+            <span>8</span>
+        </div>
+        <div class="text">
+            <span>9</span>
+        </div>
+        <div class="text">
+            <span>10</span>
+        </div>
+        <div class="text">
+            <span>11</span>
+        </div>
+        <div class="text">
+            <span>12</span>
+        </div>
+        <div class="text">
+            <span>13</span>
+        </div>
+        <div class="text">
+            <span>14</span>
+        </div>
+        <div class="text">
+            <span>15</span>
+        </div>
+        <div class="text">
+            <span>16</span>
+        </div>
+        <div class="text">
+            <span>17</span>
+        </div>
+        <div class="text">
+            <span>18</span>
+        </div>
+    </div>
+</body>
+</html>

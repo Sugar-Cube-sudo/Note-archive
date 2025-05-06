@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 引入css标签的media属性：规定当满足一定的媒体查询条件时，该引入的css才生效 -->
+    <link rel="stylesheet" href="./css/style.css" media="screen and (min-width: 600px)">
+    <style media="screen and (max-width: 600px)">
+        /* 内联样式的media属性与引入css的media属性作用相同 */
+
+        /* @import: 在css内引入其他css样式文件 */
+        /* 在引入的css文件内设置媒体查询条件，只有满足条件时，引入的css才生效 */
+        @import url("./css/style.css") screen and (max-width: 600px);
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

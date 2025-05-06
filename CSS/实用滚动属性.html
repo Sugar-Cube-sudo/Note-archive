@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        :root {
+            --back: green;
+            --back2: yellow;
+            --back3: greenyellow;
+        }
+
+        /* 滚动相关属性：
+           overscroll-behavior：滚动行为，用于控制浏览器在滚动到边界时的行为，特别是当滚动到达容器边缘时是否触发页面的整体滚动或反弹效果，可选值：
+               auto：滚动到边界时会触发浏览器的默认行为（如页面整体滚动或反弹效果）
+               contain：阻止滚动传播到祖先元素（"滚动链"）保留当前元素的边界反弹效果 不会触发页面整体的滚动
+               none：阻止滚动传播到祖先元素 也阻止元素本身的边界反弹效果
+
+            
+        */
+
+        html {
+            /* 滚动时，会有平滑过渡效果 页面滚动到某个位置时，逐步变化而不是突然跳转，可选值：
+               smooth：平滑过渡
+               auto：没有过渡效果，突然跳转，默认值
+            */
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            font-size: 3rem;
+            background-color: wheat;
+            /* 滚动结束后，没有任何回弹效果 */
+            overscroll-behavior-y: contain;
+        }
+
+        .box1 {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--back);
+        }
+
+        .box2 {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--back2);
+        }
+
+        .box3 {
+            width: 100vw;
+            height: 100vh;
+            background-color: var(--back3);
+        }
+    </style>
+</head>
+
+<body>
+    <a href="#box3">Go</a>
+    <div class="box1"></div>
+    <div class="box2"></div>
+    <div class="box3" id="box3"></div>
+</body>
+
+</html>

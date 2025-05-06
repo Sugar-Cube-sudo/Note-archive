@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'PingFang SC';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'PingFang SC';
+        }
+
+        :root {
+            /* CSS变量 */
+            /* 即CSS自定义属性 CSS Custom Properties 允许开发者在CSS中定义可重用值 使用--前缀定义变量名 */
+            /* 通过var函数使用变量 */
+            /* --变量名:值; */
+            --text-code:red;
+            --text-size: 4rem;
+
+            /* 常用CSS函数 */
+            /* calc(表达式) 表示计算 如：calc(100% - 200px) 或引用其他变量进行计算：calc(var(--text-size) + 2) 等同于4rem + 2 = 6rem */
+            /* min() 设置两个值，取其中最小的值，如：width:min(100%, 800px) */
+            /* clamp() 设置三个值，至少，最多，理想，如：width:clamp(100px, 800px, 1000px) 表示：至少100px，最多1000px，理想宽度为容器的800px */
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cent {
+            width: 800px;
+            height: 400px;
+            background-color: chartreuse;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ent {
+            font-size: 4rem;
+            color: var(--text-code);
+        }
+    </style>
+</head>
+<body>
+    <div class="cent">
+        <div class="ent">
+            <span>Hello</span>
+        </div>
+    </div>
+</body>
+</html>

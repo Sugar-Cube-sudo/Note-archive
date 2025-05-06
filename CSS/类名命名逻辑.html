@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 类名命名规范 根据元素定义类名 */
+        /* 1. 必须以字母或下划线开头 */
+        /* 2. 可以包含字母，下划线，破折号，数字 */
+        /* 3. 大小写敏感 */
+
+        /* 命名方法论 */
+
+        /* BEM */
+        /* 核心思想：命名约定而非结构规范 */
+        /* 组成：
+            Block：独立逻辑单元（.header）
+            Element：块的组成部分（__menu-item）
+            Modifier：状态或变体（--active）
+        */
+        /* 优势：避免样式冲突，提高可读性*/
+        .search-form {
+            /* Block */
+        }
+
+        .search-form__input {
+            /* Element */
+        }
+
+        .search-form__button--disabled {
+            /* Modifier */
+        }
+
+        /* SMACSS */
+        /* 五层架构：
+            Base：默认元素样式（html, body）
+            Layout：网格系统（#header, .sidebar）
+            Module：可复用组件（.card, .dropdown）
+            State：状态变化（.is-hidden, .is-active）
+            Theme：视觉变体（皮肤切换）
+        */
+
+        /* OOCSS */
+        /* 结构与皮肤分离 */
+        /* 容器与内容分离 避免类似 .sidebar h2 {} 的选择器 */
+        /* Structure */
+        .btn {
+            padding: 10px;
+            border-radius: 4px;
+        }
+
+        /* Skin */
+        .btn-primary {
+            background: blue;
+            color: white;
+        }
+
+        /*  ITCSS */
+        /* 分层架构（从泛到具体） */
+        /* Settings → 2. Tools → 3. Generic →
+        Elements →
+        Objects →
+        Components →
+        Utilities */
+        /* 关键特性：
+        $global-variables最先定义
+        @mixins/@functions次之
+        normalize.css在第三层
+        Utility类优先级最高 */
+
+        /* Atomic CSS */
+        /* 极简主义实现： */
+        /* <div class="D(f) Jc(sb) Ai(c) P(20px) Bgc(#fff)"> */
+        /* 变体：Tailwind */
+        /* <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"> */
+    </style>
+</head>
+
+<body>
+    <div class="cont"></div>
+</body>
+
+</html>

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        html {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+        }
+
+        body {
+            padding: 10px;
+            margin: 0;
+            min-width: 320px;
+            box-sizing: border-box;
+        }
+
+        img {
+            width: 100%;
+            /* height: 400px;
+
+            object-fit: cover;
+            /* background-size */
+            /* object-position: 100px 200px; */
+            /* background-position */
+        }
+
+        .container {
+            background-color: blueviolet;
+            width: 100%;
+        }
+
+        .container>span {
+            font-size: 3rem;
+        }
+
+        .medium-cat-text {
+            display: none;
+        }
+
+        .large-cat-text {
+            display: none;
+        }
+
+        @media screen and (min-width: 481px) {
+
+            .medium-cat-text {
+                display: block;
+            }
+
+            .small-cat-text {
+                display: none;
+            }
+
+            .container>span {
+                font-size: 5rem;
+            }
+
+
+        }
+
+        @media screen and (min-width: 769px) {
+            .medium-cat-text {
+                display: none;
+            }
+
+            .large-cat-text {
+                display: block;
+            }
+
+            .container>span {
+                font-size: 10rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- srcset属性用于设置多个src地址，根据屏幕宽度自动选择最合适的图片 实现响应式 -->
+        <!-- 宽度描述符 用来表述图片地址对应的横向分辨率是多少，即图像宽度 -->
+        <!-- 宽度描述符的值必须是图片真实宽度值 -->
+        <!-- 当视口宽度变化时，会自动选择合适的src地址替换显示的图片文件 -->
+        <!-- 当加载了大尺寸的图片时，视口缩小，图片不会再变化 -->
+        <!-- sizes: 可以写媒体查询条件，满足条件时，浏览器在选择图片时，应用设置的显示区域横向宽度值计算 -->
+        <!-- 像素密度描述符：定义该图片应用在多少DPR值的屏幕上 写法：img/smallcat_600_3x2_2x.jpg 1x  表示该图片应用在DPR值为1的屏幕上 -->
+        <img src="../img/smallcat_600_3x2_2x.jpg" srcset="
+        ../img/smallcat_600_3x2_2x.jpg 600w,
+        ../img/smallcat_900_3x2_3x.jpg 900w,
+        ../img/mediumcat_700_16x10_1x.jpg 700w,
+        ../img/mediumcat_1400_16x10_2x.jpg 1400w,
+        ../img/largecat_1200_16x10_1x.jpg 1200w,
+        ../img/largecat_2400_16x10_2x.jpg 2400w" sizes="(min-width: 400px) 50vw,200px" alt="">
+        <!-- 
+          浏览器选择不同尺寸图片的计算逻辑：图片横向分辨率 / 浏览器显示区域横向宽度值 得到的值减去设备DPR 以320为例：
+          600 / 320 = 1.875 - 2 = 0.125
+          900 / 320 = 2.8125 - 2 = 0.8125
+          700 / 320 = 2.1875 - 2 = 0.1875
+          1400 / 320 = 4.375
+          1200 / 320 = 3.75
+    
+         -->
+
+
+
+        <span class="small-cat-text">small cat</span>
+        <span class="medium-cat-text">medium cat</span>
+        <span class="large-cat-text">large cat</span>
+    </div>
+</body>
+
+</html>

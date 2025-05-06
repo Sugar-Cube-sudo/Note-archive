@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        @font-face {
+            font-family: 'PingFang SC';
+            src: url("../font/MapleMono-NF-CN-Italic.ttf");
+        }
+
+        * {
+            font-family: 'PingFang SC';
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+        }
+
+        .content>span {
+            font-size: 4rem;
+        }
+
+        .pc-text {
+            display: none;
+        }
+
+        .poto {
+            width: 100%;
+            background-size: cover;
+            background-position: center;
+            aspect-ratio: 16/9;
+            background-image: url("../img/视频.jpg");
+        }
+
+        .box {
+            display: flex;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .box>div {
+            font-size: 4rem;
+            background-color: blueviolet;
+            flex-grow: 1;
+            height: 200px;
+        }
+
+        /* 以移动优先为例 */
+        /* 大于等于481px */
+        @media (min-width: 481px) {
+            html {
+                /* rem参考的是根元素的字体大小，因此修改根元素字体大小，可以影响使用rem为单位的文字大小 */
+                /* 响应式设计中，经常使用rem作为字体单位 */
+                font-size: 20px;
+            }
+        }
+
+        /* 大于等于1025px */
+        @media (min-width: 1025px) {
+            .box {
+                flex-direction: row;
+            }
+
+            .pc-text {
+                display: block;
+            }
+
+            .content > :first-child {
+                display: none;
+            }
+        }
+
+        /* 大于等于1921px */
+        @media (min-width: 1921px) {
+            .poto {
+                background-image: url("../img/3.png");
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <span>Hello</span>
+        <span class="pc-text">Big</span>
+        <div class="poto"></div>
+        <div class="box">
+            <div class="child child1">1</div>
+            <div class="child child2">2</div>
+            <div class="child child3">3</div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 运算符only 限制的意思 */
+        @media only screen and (min-width: 600px) {
+            /* 只有在screen类型设备的情况下和宽度大于600px的时候，才会生效 */
+            /* only的作用绝大多数情况下是兼容老旧浏览器使用 */
+            body {
+                background-color: red;
+            }
+        }
+
+        /* 在第四级媒体查询中，最大宽度，最小宽度支持符号写法 */
+        @media (width <= 600px) {
+            /* 以上写法等价于max-width:600px */
+            /* 注意：符号永远向左 */
+            /* 最小宽度写法：600px <= width */
+            /* 可以不包含等于号 */
+            body {
+                background-color: blue;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+</body>
+</html>
